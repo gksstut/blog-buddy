@@ -82,3 +82,30 @@ var firebaseConfig = {
     {
         firebase.auth().signOut();
   });
+
+
+
+
+  $("#btn-ResetPassword").click(function()
+  {
+  var email = $("#email").val();
+
+  if(email != ""){
+      auth.sendPasswordResetEmail(email).then(function()
+      {
+        window.alert("an email has been sent to : "+ email   +" please check your emails and veriy");
+      }).catch(function(error)
+      {
+
+          var errorCode= error.code;
+          var errorMessage= error.message;
+
+          console.log(errorCode);
+          console.log(errorMessage);
+
+          window.alert("Message : " + errorMessage);
+      });  
+  }else{
+      window.alert("please enter your email address first.");
+  }
+});
