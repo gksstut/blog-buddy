@@ -38,3 +38,12 @@ var firebaseConfig = {
         window.alert("form is incomplete, please  fill in the empty fields.");
     }
   });
+
+
+
+
+
+  $("#btn-logout").click(function()
+    {
+        firebase.auth().signOut();
+  });
