@@ -30,7 +30,7 @@ var firebaseConfig = {
             var errorMessage= error.message;
 
             console.log(errorCode);
-            onsole.log(errorMessage);
+            console.log(errorMessage);
 
             window.alert("Message : " + errorMessage);
         });  
