@@ -17,7 +17,7 @@ var firebaseConfig = {
 
   $("#btn-login").click(function(){
     var email = $("#email").val();
-    var password = $("#email").val();
+    var password = $("#password").val();
 
     if(email != "" && password != ""){
         var result  = firebase.auth().signInWithEmailAndPassword(email, password);
