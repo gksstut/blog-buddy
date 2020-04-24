@@ -109,26 +109,29 @@
     </ul>
   </div>
   
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDlDUJhsP0_uh-YpaRfTOhWZsyY_hLukTw",
-      authDomain: "net-ninja-sandbox.firebaseapp.com",
-      databaseURL: "https://net-ninja-sandbox.firebaseio.com",
-      projectId: "net-ninja-sandbox"
-    };
-    firebase.initializeApp(config);
-    
-    // make auth and firestore references
-    const auth = firebase.auth();
-    const db = firebase.firestore();
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
 
-    // update firestore settings
-    db.settings({ timestampsInSnapshots: true });
-  </script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA_oFEP4RWiDALCBXTkZcb6RV86I5tw_u8",
+    authDomain: "buddy-blog-c0b0e.firebaseapp.com",
+    databaseURL: "https://buddy-blog-c0b0e.firebaseio.com",
+    projectId: "buddy-blog-c0b0e",
+    storageBucket: "buddy-blog-c0b0e.appspot.com",
+    messagingSenderId: "654686912462",
+    appId: "1:654686912462:web:d97b78a5d1fa577b53359f",
+    measurementId: "G-3865J0SCB3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
