@@ -30,7 +30,7 @@ var firebaseConfig = {
             console.log(errorMessage);
 
             window.alert("Message : " + errorMessage);
-        })   
+        });  
     }else{
         window.alert("form is incomplete, please  fill in the empty fields.");
     }
