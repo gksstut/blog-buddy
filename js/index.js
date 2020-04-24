@@ -88,13 +88,15 @@ var firebaseConfig = {
 
   $("#btn-ResetPassword").click(function()
   {
+    var auth = firebase.auth();
   var email = $("#email").val();
 
   if(email != ""){
       auth.sendPasswordResetEmail(email).then(function()
       {
         window.alert("an email has been sent to you please check your emails and veriy");
-      }).catch(function(error)
+      })
+      .catch(function(error)
       {
 
           var errorCode= error.code;
