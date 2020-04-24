@@ -94,7 +94,7 @@ var firebaseConfig = {
   if(email != ""){
       auth.sendPasswordResetEmail(email).then(function()
       {
-        window.alert("an email has been sent to you please check your emails and veriy");
+        window.alert("an email has been sent to : " + email + " please check your emails and veriy");
       })
       .catch(function(error)
       {
