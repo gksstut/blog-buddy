@@ -42,6 +42,41 @@ var firebaseConfig = {
 
 
 
+  $("#btn-signup").click(function()
+  {
+  var email = $("#email").val();
+  var password = $("#password").val();
+  var cPassword = $("#confirmpassword").val();
+
+  if(email != "" && password != "" && cPassword != ""){
+      if(password == cPassword){
+
+        var result  = firebase.auth().createUserWithEmailAndPassword(email, password);
+
+      result.catch(function(error)
+      {
+
+          var errorCode= error.code;
+          var errorMessage= error.message;
+
+          console.log(errorCode);
+          console.log(errorMessage);
+
+          window.alert("Message : " + errorMessage);
+        });
+      }else{
+
+        window.alert("The password field does not match the confirm password field");
+
+      }
+        
+  }else{
+      window.alert("form is incomplete, please  fill in the empty fields.");
+  }
+});
+
+
+
 
   $("#btn-logout").click(function()
     {
