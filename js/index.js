@@ -125,9 +125,9 @@ $("#btn-update").click(function()
   var lastName = $("#lastName").val();
   var gender= $("#Gender").val();
   
-  var rootRef = firebase.database().child("Users");
-  var userId = firebase.auth().currentUser.uid;
-  var userRef = rootRef.child(userId); 
+  var rootRef = firebase.database().ref().child("Users");
+  var userID = firebase.auth().currentUser.uid;
+  var usersRef = rootRef.child(userID); 
 
 if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
 
@@ -142,7 +142,7 @@ if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastNa
     "Gender": gender,
   };
 
-userRef.set(userData, function(error)
+usersRef.set(userData, function(error)
 {
 
 if (error) {
@@ -156,7 +156,7 @@ if (error) {
   window.alert("Message : " + errorMessage);
   
 } else {
-  window.location.href= "MainPage.html"
+  window.location.href= "MainPage.html";
   
 }
 
