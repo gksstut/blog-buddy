@@ -114,8 +114,58 @@ var firebaseConfig = {
 
 //Login buttun ends here
 
-//Login buttun starts here
-$("#btn-logout").click(function()
+//Accont Seetings
+$("#btn-update").click(function()
 {
-    firebase.auth().signOut();
+  var phoneNum = $("#phone").val();
+  var StudentNum = $("#studentNum").val();
+  var bio = $("#bio").val();
+  var university = $("#university").val();
+  var firstName = $("#firstName").val();
+  var lastName = $("#lastName").val();
+  var gender= $("#Gender").val();
+  
+  var rootRef = firebase.database().child("Users");
+  var userId = firebase.auth().currentUser.uid;
+  var userRef = rootRef.child(userId); 
+
+if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
+
+  var userData = 
+  {
+    "phone": phoneNum,
+    "studentNum": StudentNum,
+    "bio":bio,
+    "firstName": firstName,
+    "university":university,
+    "lastName": lastName,
+    "Gender": gender,
+  };
+
+userRef.set(userData, function(error)
+{
+
+if (error) {
+
+  var errorCode= error.code;
+  var errorMessage= error.message;
+
+  console.log(errorCode);
+  console.log(errorMessage);
+
+  window.alert("Message : " + errorMessage);
+  
+} else {
+  window.location.href= "MainPage.html"
+  
+}
+
+
+
+});
+
+} else {
+  window.alert("form is incomplete, please  fill in the empty fields.");
+}
+
 });

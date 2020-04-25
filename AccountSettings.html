@@ -88,6 +88,12 @@
                 </div>
 
                 <div class="form-wrapper">
+                    <input id="bio" type="text" placeholder="Bio" class="form-control">
+                    <i class="zmdi  zmdi-tablet-mac"></i>  
+                </div>
+
+
+                <div class="form-wrapper">
                     <section name= "" id="Gender" class="form-control" >
                         <option value="" disabled selected>Select Gender</option>
                         <option value="Male">Male</option>
@@ -112,7 +118,20 @@
     firebase.auth().onAuthStateChanged(function(user)
     {
         if(user){
-             window.location.href = "MainPage.html";
+            var userID = firebase.auth().currentUser.uid;
+            firebase.database().ref('Users/' + userID).once('value').then(function(sanpshot)
+            {
+
+            if (snapshot.val()) {
+
+                window.location.href = "MainPage.html";
+                
+            } else {
+                window.location.href = "AccountSettings.html";
+            }    
+
+
+            });
         }
     });
 </script>
