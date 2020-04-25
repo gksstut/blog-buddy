@@ -14,7 +14,7 @@ var firebaseConfig = {
 
   firebase.auth.Auth.Persistence.LOCAL;
 
-
+  //Login buttun starts here
   $("#btn-login").click(function()
     {
     var email = $("#email").val();
@@ -38,10 +38,10 @@ var firebaseConfig = {
         window.alert("form is incomplete, please  fill in the empty fields.");
     }
   });
+//Login buttun ends here
 
 
-
-
+//sigUp buttun starts here
   $("#btn-signup").click(function()
   {
   var email = $("#email").val();
@@ -74,18 +74,18 @@ var firebaseConfig = {
       window.alert("form is incomplete, please  fill in the empty fields.");
   }
 });
+//siginUp buttun ends here
 
 
-
-
+//logout buttun starts here
   $("#btn-logout").click(function()
     {
         firebase.auth().signOut();
   });
+//Logout buttun ends here
 
 
-
-
+//reset password buttun starts here
   $("#btn-ResetPassword").click(function()
   {
     var auth = firebase.auth();
@@ -110,4 +110,12 @@ var firebaseConfig = {
   }else{
       window.alert("please enter your email address first.");
   }
+});
+
+//Login buttun ends here
+
+//Login buttun starts here
+$("#btn-logout").click(function()
+{
+    firebase.auth().signOut();
 });
