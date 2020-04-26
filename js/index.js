@@ -1,12 +1,12 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyA_oFEP4RWiDALCBXTkZcb6RV86I5tw_u8",
-    authDomain: "buddy-blog-c0b0e.firebaseapp.com",
-    databaseURL: "https://buddy-blog-c0b0e.firebaseio.com",
-    projectId: "buddy-blog-c0b0e",
-    storageBucket: "buddy-blog-c0b0e.appspot.com",
-    messagingSenderId: "654686912462",
-    appId: "1:654686912462:web:d97b78a5d1fa577b53359f",
-    measurementId: "G-3865J0SCB3"
+  var firebaseConfig = {
+    apiKey: "AIzaSyAsG6B509P2CuHNPscEUbj37U2oaaWq4OQ",
+    authDomain: "buddyblogdb.firebaseapp.com",
+    databaseURL: "https://buddyblogdb.firebaseio.com",
+    projectId: "buddyblogdb",
+    storageBucket: "buddyblogdb.appspot.com",
+    messagingSenderId: "222785122276",
+    appId: "1:222785122276:web:5105ed633c76b45e9321f1",
+    measurementId: "G-R4K9HWH7PW"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
