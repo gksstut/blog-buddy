@@ -96,20 +96,7 @@
     firebase.auth().onAuthStateChanged(function(user)
     {
         if(user){
-            var userID = firebase.auth().currentUser.uid;
-            firebase.database().ref('Users/' + userID).once('value').then(function(sanpshot)
-            {
-
-            if (snapshot.val()) {
-
-                window.location.href = "MainPage.html";
-                
-            } else {
-                window.location.href = "AccountSettings.html";
-            }    
-
-
-            });
+             window.location.href = "MainPage.html";
         }
     });
 </script>
