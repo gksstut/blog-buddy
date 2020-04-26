@@ -66,14 +66,14 @@
                 </div>
     
                 <div class="form-wrapper">
-                    <section name= "" id="university" class="form-control" >
+                    <select name= "" id="university" class="form-control" >
                         <option value="" disabled selected>University</option>
                         <option value="Tshwane University of technology">Tshwane University of technology</option>
                         <option value="University of Pretoria">University of Pretoria</option>
                         <option value="Unisa">Unisa</option>
                         <option value="University of the witwatersrand">University of the witwatersrand</option>
                         <option value="University of Johannesburg">University of Johannesburg</option>
-                    </section>
+                    </select>
                     <i class="zmdi  zmdi-caret-down" style="font-size: 17px;"></i>
                 </div>
 
@@ -94,12 +94,12 @@
 
 
                 <div class="form-wrapper">
-                    <section name= "" id="Gender" class="form-control" >
+                    <select name= "" id="Gender" class="form-control" >
                         <option value="" disabled selected>Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
-                    </section>
+                    </select>
                     <i class="zmdi  zmdi-caret-down" style="font-size: 17px;"></i>
                 </div>
 
@@ -120,16 +120,14 @@
     {
         if(user){
             var userID = firebase.auth().currentUser.uid;
-            firebase.database().ref('Users/' + userID).once('value').then(function(sanpshot)
+            firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
             {
 
             if (snapshot.val()) {
 
                 window.location.href = "MainPage.html";
                 
-            } else {
-                window.location.href = "AccountSettings.html";
-            }    
+            }  
 
 
             });

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Buddy Blog Login</title>
+        <title>BuddyBlog Login</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -93,10 +93,24 @@
       
 <script src="js/index.js"></script>
 <script>
+    
     firebase.auth().onAuthStateChanged(function(user)
     {
         if(user){
-             window.location.href = "MainPage.html";
+            var userID = firebase.auth().currentUser.uid;
+            firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+            {
+
+            if (snapshot.val()) {
+
+                window.location.href = "MainPage.html";
+                
+            }else{
+               window.location.href = "AccountSettings.html";  
+            }  
+
+
+            });
         }
     });
 </script>
