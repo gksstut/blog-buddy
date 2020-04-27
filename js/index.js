@@ -1,4 +1,4 @@
-  var firebaseConfig = {
+ var firebaseConfig = {
     apiKey: "AIzaSyAsG6B509P2CuHNPscEUbj37U2oaaWq4OQ",
     authDomain: "buddyblogdb.firebaseapp.com",
     databaseURL: "https://buddyblogdb.firebaseio.com",
