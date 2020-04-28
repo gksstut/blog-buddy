@@ -178,9 +178,9 @@
                             var databaseRef = firebase.database().ref().child("Blogs");
 
                                 databaseRef.once("value").then(function(snapshot){
-                                var name = picture["name"];
+                                var pictureName = picture["pictureName"];
                                 var dateStr = new Date().getTime();
-                                var fileCompleteName = name + "_" + dateStr;
+                                var fileCompleteName = pictureName + "_" + dateStr;
 
                                 var storageRef = firebase.storage().ref("Blog Images");
                                 var blogStorageRef = storageRef.child(fileCompleteName);
@@ -220,10 +220,11 @@
 
                                             var blogData = {
                                                 "image": downloadUrl,
-                                                "name": fileCompleteName,
+                                                "pictureName": fileCompleteName,
                                                 "desc": desc,
                                                 "uid": user.uid,
-                                                "name": userName,
+                                                "counter": 5000 - counter,
+                                                "userName": userName,
                                                 "time": time.toLocaleString('en-US',{hour: 'numeric', minute:'numeric',hour12: true}),
                                                 "date": time.toLocaleDateString('en-US', options),
                                             }; 
@@ -241,7 +242,8 @@
 
                                                     window.open("","_self");
                                                 }
-                                                
+
+                                                resetForm();
                                             });
 
                                         });
@@ -256,8 +258,65 @@
                             $("#selected-image").fadeOut();
                             $("#upload-progress").html("Completed");
                         }
+
+
+                        //**************************************Retrieve and display data from firebase**************************************
+                        var firebaseConfig = {
+                            apiKey: "AIzaSyAsG6B509P2CuHNPscEUbj37U2oaaWq4OQ",
+                            authDomain: "buddyblogdb.firebaseapp.com",
+                            databaseURL: "https://buddyblogdb.firebaseio.com",
+                            projectId: "buddyblogdb",
+                            storageBucket: "buddyblogdb.appspot.com",
+                            messagingSenderId: "222785122276",
+                            appId: "1:222785122276:web:5105ed633c76b45e9321f1",
+                            measurementId: "G-R4K9HWH7PW"
+                        };
+                        // Initialize Firebase
+                        firebase.initializeApp(firebaseConfig);
+                        firebase.auth.Auth.Persistence.LOCAL;
+                        
+                        
+                        
+                        var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
+
+                        dbBlogs.on("value",function(blogs){
+                            if(blogs.exists()){
+                                var blogsHTML = "";
+
+                                blogs.forEach(function(singleBlog){
+                                    counter = counter + 1;
+
+                                    blogsHTML += "<div class = 'jumbotron bg-light text-dark border border-dark'>";
+                                        blogsHTML += "<div> <img width='800px' height='550px' src = '";
+                                            blogsHTML += singleBlog.val().image;
+                                        blogsHTML += "'/> </div> <br>";
+
+                                        blogsHTML += "<div class = 'row'>";
+                                            blogsHTML += "<div class = 'col-sm-5'> <p style = 'color:grey;'>"
+                                                         +"Published by: " + singleBlog.val().userName
+                                                         +"</p> </div>" +
+
+                                                         "<div class = 'col-sm-3'> <p style = 'color:grey;'>"
+                                                         +"Time: " + singleBlog.val().time
+                                                         +"</p> </div>" +
+                                                         
+                                                         "<div class = 'col-sm-4'> <p style = 'color:grey; margin-left: 75px;'>"
+                                                         +"Date: " + singleBlog.val().date
+                                                         +"</p> </div>"
+                                                         ;
+                                        blogsHTML += "</div> <br>";
+
+                                        blogsHTML += "<div style = 'text-align: justify; color:black;'>";
+                                            blogsHTML += singleBlog.val().desc;
+                                        blogsHTML += "</div> <br>";
+                                    blogsHTML += "</div>";
+                                });
+                                $("#blogs").html(blogsHTML);
+                            }
+                        });
+                        //**************************************Retrieve and display data from firebase ends here**************************************
                     </script>
-                    <!----------------------------------------Validation of uploading blogs End here---------------------------------------------->
+                    <!----------------------------------------Validation of uploading blogs Ends here---------------------------------------------->
 
                 
                 </div>
