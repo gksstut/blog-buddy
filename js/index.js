@@ -180,3 +180,10 @@ function switchView(view){
   });
 
 }
+
+
+$("#ProfileP").click(function()
+{
+   window.location.href= "profile.html";
+});
+//Logout 
