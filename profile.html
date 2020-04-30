@@ -58,7 +58,11 @@
                 <div class="container" id="container">
 
                 </div>
-
+<!------------------------------------------------------------------------------------------------------------------>            
+   <!------------------------------------------------------------------------------------------------------------------>            
+   <!------------------------------------------------------------------------------------------------------------------>            
+   <!------------------------------------------------------------------------------------------------------------------>            
+   
  <!--------------------------------------------Blog Post Area---------------------------------------------->
  <div class="jumbotron" style="background-color:burlywood; margin-top: 15px;">
   <script>
@@ -66,13 +70,6 @@
   </script>
   <div class="container text-center">
       <form id="main-form">
-          <div class="form-group">
-              <textarea type="text" rows="5" placeholder="Description..." class="form-control" id="main-desc"></textarea>                       
-                  <div class="invalid-feedback">
-                      Please give your blog a description first.
-                  </div>
-          </div>
-
           <div class="form-group">
               <input type="file" class="form-control" id="main-image"/>
                   <div class="invalid-feedback">
@@ -100,18 +97,7 @@
 </div>
 <!--------------------------------------------Blog Post Area Ends here---------------------------------------------->
 <!---------------------------------------------After Blog Post Area------------------------------------------------->
-<hr> 
-<br><br><br>
-<div class="text-center bg-light text-dark">
-   <h1>New Blog Posts</h1>
-</div>
-<hr>
-<br>
-<div class="row container-fluid bg-3">
-  <div class="col-sm-12" id="blogs">
-  </div>
-</div>
-<br>
+
 <!----------------------------------------After Blog Post Area Ends here---------------------------------------------->
 <!----------------------------------------Validation of uploading blogs---------------------------------------------->
 <script>
@@ -204,12 +190,11 @@
               var blogData = {
                   "image": downloadUrl,
                   "pictureName": fileCompleteName,
-                  "desc": desc,
+                
                   "uid": user.uid,
                   "counter": 5000 - counter,
                   "userName": userName,
-                  "time": time.toLocaleString('en-US',{hour: 'numeric', minute:'numeric',hour12: true}),
-                  "date": time.toLocaleDateString('en-US', options),
+                  
               }; 
 
               var newPostRef = databaseRef.push();
@@ -242,8 +227,14 @@
       $("#upload-progress").html("Completed");
   }
 </script>
-                
-            </div>
+   <!------------------------------------------------------------------------------------------------------------------>            
+  <!------------------------------------------------------------------------------------------------------------------>            
+   <!------------------------------------------------------------------------------------------------------------------>            
+   <!------------------------------------------------------------------------------------------------------------------>            
+   <!------------------------------------------------------------------------------------------------------------------>            
+            
+  
+  </div>
         </div>
 
 
