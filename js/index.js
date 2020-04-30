@@ -198,11 +198,17 @@ file= e.target.files[0];
 
 function UploadBtnPressed(){
 
-firebase.storage().ref('users/' + auth.user.uid + 'profile.jpg').put(file).then(function (){
-  console.log("successfully uploaded")
-}).catch(error =>{
-  console.log(errorMessage);
-})
+  firebase.auth().onAuthStateChanged(function(user)
+  {
+      if(user){
+        firebase.storage().ref('users/' + auth.user.uid + 'profile.jpg').put(file).then(function (){
+          console.log("successfully uploaded")
+        }).catch(error =>{
+          console.log(errorMessage);
+        })
+      }
+  });
+
 
 }
 
