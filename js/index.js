@@ -180,3 +180,10 @@ function switchView(view){
   });
 
 }
+
+
+$("#btn-profie").click(function()
+{
+    window.location.href="profile.html"
+});
+
