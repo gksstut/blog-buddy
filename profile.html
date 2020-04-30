@@ -153,8 +153,8 @@
     {
       var picture = $("#profileImg").prop("files")[0];
 
-    var databaseRef = firebase.database().ref().child("ProfilePics");
-    databaseRef.once("value").then(function(snapshot){
+      var databaseRef = firebase.database().ref("ProfilePics");
+      databaseRef.once("value").then(function(snapshot){
         var pictureName = picture["pictureName"];
         var dateStr = new Date().getTime();
         var fileCompleteName = pictureName + "_" + dateStr;
@@ -180,8 +180,7 @@
 
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl){
                     
-           
-
+          
                 var profileData = {
                     "image": downloadUrl,
                     "pictureName": fileCompleteName,
