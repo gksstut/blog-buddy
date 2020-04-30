@@ -189,27 +189,4 @@ $("#btn-profie").click(function()
 
 ///////////////////////Profile page///////////////////////////////////////////////////
 
-let img =document.getElementById("imgs");
-let file={};
-
-function chooseFile(e){
-file= e.target.files[0];
-}
-
-function UploadBtnPressed(){
-
-firebase.auth().onAuthStateChanged(function(user)
-{
-    if(user){
-      firebase.storage().ref('users/' + auth.user.uid + 'profile.jpg').put(file).then(function (){
-        console.log("successfully uploaded")
-      }).catch(error =>{
-        console.log(errorMessage);
-      })
-    }
-});
-
-
-}
-
 ///////////////////////Profile page///////////////////////////////////////////////////
