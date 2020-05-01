@@ -273,6 +273,14 @@
          function error(err){
 
         },
+///////////////////////////////////////////////////////////////////////////////////////////////
+function gotData(data){
+var Users= data.val();
+var keys = Object.keys(Users);
+console.log(keys);
+
+},
+///////////////////////////////////////////////////////////////////////////////////////////////
         function complete(){
             var user = firebase.auth().currentUser;
             var userName;
@@ -436,6 +444,7 @@
               MainImg.src= imgUrl; 
                 })
                 }
+
             });
         </script>
 
