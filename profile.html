@@ -131,7 +131,8 @@
 
       <script>
         //**************************************Retrieve and display data from firebase**************************************
-       
+        var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("uid").equalTo(user.uid);
+    
         dbBlogs.on("value",function(blogs){
         function complete(){
             var user = firebase.auth().currentUser;
