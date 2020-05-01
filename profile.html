@@ -104,15 +104,11 @@
                             counter = counter + 1;
             
             
-                                blogsHTML += "<div class = 'row'>";
-                                    blogsHTML += "<div class = 'col-sm-5'> <p style = 'color:grey;'>"
+                           
+                                    blogsHTML += "<div> <p>"
                                                +"Published by: " + singleBlog.val().userName
                                                +"</p> </div>" ;
-            
-                                             
-                                blogsHTML += "</div> <br>";
-            
-                               
+     
                         });
                         $("#blogs").html(blogsHTML);
                     }
