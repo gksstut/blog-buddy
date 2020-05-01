@@ -115,19 +115,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-    
-<script>
-    firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
-                var fName = (snapshot.val() && snapshot.val().firstName);
-                var lName = (snapshot.val() && snapshot.val().lastName);
-                var userName;
-                userName = fName + " " + lName;
-                var htmltag = "";
-                htmltag="<h1>userName</h1>";
-            }); 
-</script>
-
-
+      <h1>Alex Smith</h1>
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
@@ -265,13 +253,13 @@
     }
  //******************************************Upload and save to storage and databse********************************************
     var databaseRef = firebase.database().ref().child("profilePics");
-    var user = firebase.auth().currentUser;
+
     databaseRef.once("value").then(function(snapshot){
     var pictureName = picture["pictureName"];
     var dateStr = new Date().getTime();
     var fileCompleteName = pictureName + "_" + dateStr;
-  
-    var storageRef = firebase.storage().ref("Profile Pictres/" + firebase.auth().user.uid+"/profile.jpg");
+
+    var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg");
     var blogStorageRef = storageRef.child(fileCompleteName);
 
     var uploadTask = blogStorageRef.put(picture);
