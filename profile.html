@@ -259,10 +259,10 @@
     var dateStr = new Date().getTime();
     var fileCompleteName = pictureName + "_" + dateStr;
     var user = firebase.auth().currentUser;
-    var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg");
-    var blogStorageRef = storageRef.child(fileCompleteName);
+    var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").put(picture);
+    
 
-    var uploadTask = blogStorageRef.put(picture);
+    var uploadTask = StorageRef;
 
     uploadTask.on("state_changed",
         function progress(snapshot){
