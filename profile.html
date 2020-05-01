@@ -125,65 +125,25 @@
       
 
 
+
+
+
+
       <script>
-        //**************************************Retrieve and display data from firebase**************************************
-            var user = firebase.auth().currentUser;
-            var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("uid").equalTo(user.uid);
-            
-            dbBlogs.on("value",function(blogs){
-                if(blogs.exists()){
-                    var blogsHTML = "";
-                    
-                    blogs.forEach(function(singleBlog){
-                        counter = counter + 1;
-        
-                        blogsHTML += "<div class = 'jumbotron bg-light text-dark border border-dark'>";
-                            blogsHTML += "<div> <img width='100%'  src = '";
-                                blogsHTML += singleBlog.val().image;
-                            blogsHTML += "'/> </div> <br>";
-        
-                            blogsHTML += "<div class = 'row'>";
-                                blogsHTML += "<div class = 'col-sm-5'> <p style = 'color:grey;'>"
-                                           +"Published by: " + singleBlog.val().userName
-                                           +"</p> </div>" +
-        
-                                            "<div class = 'col-sm-3'> <p style = 'color:grey;'>"
-                                            +"Time: " + singleBlog.val().time
-                                            +"</p> </div>" +
-                                                                 
-                                            "<div class = 'col-sm-4'> <p style = 'color:grey; margin-left: 75px;'>"
-                                            +"Date: " + singleBlog.val().date
-                                            +"</p> </div>"
-                                            ;
-                            blogsHTML += "</div> <br>";
-        
-                            blogsHTML += "<div style = 'text-align: justify; color:black;'>";
-                                blogsHTML += singleBlog.val().desc;
-                            blogsHTML += "</div> <br>";
-        
-                            blogsHTML += "<div class='form group' style='text-align: justify; color:black;'>";
-                                blogsHTML += "<button class='form-control btn btn-light text-white' style='background-color:burlywood;'"
-                                + "onclick=deleteBlogRecored('"+singleBlog.key+"')>Delete Blog</button>";
-                            blogsHTML += "</div> <br>";
-                        blogsHTML += "</div>";
-                    });
-                    $("#blogs").html(blogsHTML);
-                }
-            });
-        
-            function deleteBlogRecored(key){
-                var deleteRef = firebase.database().ref().child("Blogs").child(key);
-        
-                return deleteRef.remove()
-                    .then(function(){
-                        console.log("Removed Successfully.");
-                    })
-                    .catch(function(){
-                        console.log("Error Occurred.");
-                    });
-            }
-        //**************************************Retrieve and display data from firebase ends here**************************************
-        </script>
+       var user = firebase.auth().currentUser;
+var name, email, uid;
+
+if (user != null) {
+  name = user.firstName;
+  email = user.phone;
+  photoUrl = user.photoURL;
+ console.log(name);
+ console.log(email);
+
+  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                   // this value to authenticate with your backend server, if
+                   // you have one. Use User.getToken() instead.
+} </script>
 
 
 
