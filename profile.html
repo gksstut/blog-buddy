@@ -91,6 +91,9 @@
         <h1 class="text-light"><a href="#">
           
           <script>
+             firebase.auth().onAuthStateChanged(function(user)
+            {
+              if(user){
           var user = firebase.auth().currentUser;
             var userName;
 
@@ -101,6 +104,8 @@
                 userName = fName + " " + lName;
                 console.log(userName);
             });
+          }
+          });
               </script>
         </a></h1>
         <div class="social-links mt-3 text-center">
