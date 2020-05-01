@@ -234,16 +234,13 @@
 
 //**********************Post button************************//
     $("#btn-upload").click(function(){
-    $("#main-desc").removeClass("is-invalid");
+  
     $("#main-image").removeClass("is-invalid");
 
-    var desc = $("#main-desc").val();
+ 
     var picture = $("#main-image").prop("files")[0];
 
-    if(!desc){
-        $("#main-desc").addClass("is-invalid");
-        return; 
-    }
+  
                              
     if(picture == null){
         $("#main-image").addClass("is-invalid");
