@@ -259,7 +259,7 @@
     var dateStr = new Date().getTime();
     var fileCompleteName = pictureName + "_" + dateStr;
 
-    var storageRef = firebase.storage().ref("Profile Pictres");
+    var storageRef = firebase.storage().ref("Profile Pictres/" + auth.user.uid+"/profile.jpg");
     var blogStorageRef = storageRef.child(fileCompleteName);
 
     var uploadTask = blogStorageRef.put(picture);
