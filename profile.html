@@ -89,24 +89,8 @@
       <div class="profile">
         <img src="" alt="" class="img-fluid rounded-circle" id="circleImg">
         <h1 class="text-light"><a href="#">
-          
-          <script>
-             firebase.auth().onAuthStateChanged(function(user)
-            {
-              if(user){
-          var user = firebase.auth().currentUser;
-            var userName;
+          <output>Moses</output>
 
-            firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
-                var fName = (snapshot.val() && snapshot.val().firstName);
-                var lName = (snapshot.val() && snapshot.val().lastName);
-
-                userName = fName + " " + lName;
-                console.log(userName);
-            });
-          }
-          });
-              </script>
         </a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -293,6 +277,7 @@
 
                 $("#upload-progress").html(Math.round(percentage) + "%");
                 $("#upload-progress").attr("style", "width:" + percentage + "%");
+                
          },
          function error(err){
 
@@ -306,6 +291,7 @@
                 var lName = (snapshot.val() && snapshot.val().lastName);
 
                 userName = fName + " " + lName;
+                
                
             }); 
 
