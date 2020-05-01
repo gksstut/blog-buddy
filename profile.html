@@ -115,7 +115,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>Alex Smith</h1>
+      <h1>userName/h1>
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
@@ -258,7 +258,7 @@
     var pictureName = picture["pictureName"];
     var dateStr = new Date().getTime();
     var fileCompleteName = pictureName + "_" + dateStr;
-
+    var user = firebase.auth().currentUser;
     var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg");
     var blogStorageRef = storageRef.child(fileCompleteName);
 
