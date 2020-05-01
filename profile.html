@@ -425,6 +425,11 @@
             {
                 if(!user){
                     window.location.href = "signin.html";
+                }else{
+                  var userID = firebase.auth().currentUser.uid;
+                  firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
+              circleImg.src = imgUrl; 
+              MainImg.src= imgUrl; 
                 }
             });
         </script>
