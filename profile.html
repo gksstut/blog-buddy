@@ -91,7 +91,36 @@
         <h1 class="text-light"><a href="#">
           
           
-          Alex Smith
+          <script>
+            //**************************************Retrieve and display data from firebase**************************************
+                var user = firebase.auth().currentUser;
+                var dbBlogs = firebase.database().ref().child("Users").orderByChild("uid").equalTo(user.uid);
+                
+                dbBlogs.on("value",function(blogs){
+                    if(blogs.exists()){
+                        var blogsHTML = "";
+                        
+                        blogs.forEach(function(singleBlog){
+                            counter = counter + 1;
+            
+            
+                                blogsHTML += "<div class = 'row'>";
+                                    blogsHTML += "<div class = 'col-sm-5'> <p style = 'color:grey;'>"
+                                               +"Published by: " + singleBlog.val().userName
+                                               +"</p> </div>" ;
+            
+                                             
+                                blogsHTML += "</div> <br>";
+            
+                               
+                        });
+                        $("#blogs").html(blogsHTML);
+                    }
+                });
+            
+           
+            //**************************************Retrieve and display data from firebase ends here**************************************
+            </script>
 
 
         </a></h1>
@@ -134,8 +163,7 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+              </div>
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
