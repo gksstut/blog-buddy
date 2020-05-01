@@ -131,6 +131,8 @@
 
       <script>
         //**************************************Retrieve and display data from firebase**************************************
+       
+        dbBlogs.on("value",function(blogs){
         function complete(){
             var user = firebase.auth().currentUser;
             var userName;
@@ -148,11 +150,11 @@
             }); 
 
     
-                    
+          }
                    
                     $("#blogs").html(blogsHTML);
            
-        
+          });
        
         //**************************************Retrieve and display data from firebase ends here**************************************
         </script>
