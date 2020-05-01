@@ -115,7 +115,19 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>Alex Smith</h1>
+    
+<script>
+    firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
+                var fName = (snapshot.val() && snapshot.val().firstName);
+                var lName = (snapshot.val() && snapshot.val().lastName);
+                var userName;
+                userName = fName + " " + lName;
+                var htmltag = "";
+                htmltag="<h1>userName</h1>";
+            }); 
+</script>
+
+
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
@@ -259,7 +271,7 @@
     var dateStr = new Date().getTime();
     var fileCompleteName = pictureName + "_" + dateStr;
   
-    var storageRef = firebase.storage().ref("Profile Pictres/" + auth.user.uid+"/profile.jpg");
+    var storageRef = firebase.storage().ref("Profile Pictres/" + firebase.auth().user.uid+"/profile.jpg");
     var blogStorageRef = storageRef.child(fileCompleteName);
 
     var uploadTask = blogStorageRef.put(picture);
