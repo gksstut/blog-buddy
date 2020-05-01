@@ -320,6 +320,17 @@
         }
     );
     });
+    firebase.auth().onAuthStateChanged(function(user)
+    {
+        if(user){
+            var userID = firebase.auth().currentUser.uid;
+            firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
+              circleImg.src = imgUrl;  
+            })
+        }
+    });
+
+
     });
     //**********************Post button ends here************************//
 //**************************************Upload and save to storage and databse ends here**************************************                    
