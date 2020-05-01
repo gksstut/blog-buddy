@@ -115,7 +115,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>userName/h1>
+      <h1>userName</h1>
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
@@ -284,6 +284,19 @@
                 userName = fName + " " + lName;
             }); 
 
+
+           firebase.auth().onAuthStateChanged(function(user){ 
+        if(user){
+            var userID = firebase.auth().currentUser.uid;
+            firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
+              circleImg.src = imgUrl; 
+              MainImg.src= imgUrl; 
+            })
+        }
+    });
+
+
+
             uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl){
                 var time = new Date();
  
@@ -320,16 +333,7 @@
         }
     );
     });
-    firebase.auth().onAuthStateChanged(function(user)
-    {
-        if(user){
-            var userID = firebase.auth().currentUser.uid;
-            firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
-              circleImg.src = imgUrl; 
-              MainImg.src= imgUrl; 
-            })
-        }
-    });
+    
 
 
     });
@@ -430,7 +434,7 @@
                   firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
               circleImg.src = imgUrl; 
               MainImg.src= imgUrl; 
-                }
+                })
                 }
             });
         </script>
