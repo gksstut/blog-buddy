@@ -94,7 +94,7 @@
           <script>
             //**************************************Retrieve and display data from firebase**************************************
                 var user = firebase.auth().currentUser;
-                var dbBlogs = firebase.database().ref().child("Users").orderByChild("uid").equalTo(user.uid);
+                var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("uid").equalTo(user.uid);
                 
                 dbBlogs.on("value",function(blogs){
                     if(blogs.exists()){
@@ -136,12 +136,12 @@
       <nav class="nav-menu">
         <ul>
         <li class="active"><a href="#"><i class="bx bx-user"></i> <span>Profile</span></a></li>
-          <li><a href="#MainPage.html"><i class="bx bx-home"></i> <span>Blogs</span></a></li>
+          <li><a href="MainPage.html"><i class="bx bx-home"></i> <span>Blogs</span></a></li>
           <li><a href="#portfolio"><i class="bx bx-book-content"></i> My Blogs</a></li>
           <li><a href="#contact"><i class="bx bx-envelope"></i> My contacts</a></li>
 
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav><!-- .nav-menu -->  
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
     </div>
