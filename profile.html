@@ -89,7 +89,7 @@
       <div class="profile">
         <img src="" alt="" class="img-fluid rounded-circle" id="circleImg">
         <h1 class="text-light"><a href="#">
-          <p id="p1">Hello World!</p>
+          <p id="p1">UserName</p>
 
         </a></h1>
         <div class="social-links mt-3 text-center">
@@ -240,7 +240,7 @@
         previewImage(this);
     });
 
-//**********************Post button************************//
+    //**********************Post button************************//
     $("#btn-upload").click(function(){
   
     $("#main-image").removeClass("is-invalid");
@@ -259,7 +259,7 @@
         $("#main-image").addClass("is-invalid");
         return;
     }
- //******************************************Upload and save to storage and databse********************************************
+    //******************************************Upload and save to storage and databse********************************************
     var databaseRef = firebase.database().ref().child("profilePics");
 
     databaseRef.once("value").then(function(snapshot){
@@ -446,7 +446,23 @@
                   firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
               circleImg.src = imgUrl; 
               MainImg.src= imgUrl; 
+
                 })
+                function complete(){
+            var user = firebase.auth().currentUser;
+            var userName;
+
+            firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
+                var fName = (snapshot.val() && snapshot.val().firstName);
+                var lName = (snapshot.val() && snapshot.val().lastName);
+
+                userName = fName + " " + lName;
+
+                document.getElementById("p1").innerHTML = userName;
+               
+            }); 
+                }
+                
                 }
                 
             });
