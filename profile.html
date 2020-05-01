@@ -91,32 +91,7 @@
         <h1 class="text-light"><a href="#">
           
           
-          <script>
-            //**************************************Retrieve and display data from firebase**************************************
-                var user = firebase.auth().currentUser;
-                var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("uid").equalTo(user.uid);
-                
-                dbBlogs.on("value",function(blogs){
-                    if(blogs.exists()){
-                        var blogsHTML = "";
-                        
-                        blogs.forEach(function(singleBlog){
-                            counter = counter + 1;
-            
-            
-                           
-                                    blogsHTML += "<div> <p>"
-                                                + singleBlog.val().userName
-                                               +"</p> </div>";
-     
-                        });
-                        $("#blogs").html(blogsHTML);
-                    }
-                });
-            
-           
-            //**************************************Retrieve and display data from firebase ends here**************************************
-            </script>
+          
 
 
         </a></h1>
@@ -146,7 +121,48 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>userName</h1>
+   
+      
+
+
+
+
+
+
+      <script>
+        //**************************************Retrieve and display data from firebase**************************************
+            var user = firebase.auth().currentUser;
+            var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("uid").equalTo(user.uid);
+            
+            dbBlogs.on("value",function(blogs){
+                if(blogs.exists()){
+                    var blogsHTML = "";
+                    
+                    blogs.forEach(function(singleBlog){
+                        counter = counter + 1;
+        
+        
+                       
+                                blogsHTML += "<div> <p>"
+                                            + singleBlog.val().userName
+                                           +"</p> </div>";
+ 
+                    });
+                    $("#blogs").html(blogsHTML);
+                }
+            });
+        
+       
+        //**************************************Retrieve and display data from firebase ends here**************************************
+        </script>
+
+
+
+
+
+
+
+
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
