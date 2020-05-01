@@ -261,7 +261,6 @@
     var user = firebase.auth().currentUser;
     var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").put(picture);
     
-
     var uploadTask = storageRef;
 
     uploadTask.on("state_changed",
