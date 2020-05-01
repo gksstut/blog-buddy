@@ -253,12 +253,12 @@
     }
  //******************************************Upload and save to storage and databse********************************************
     var databaseRef = firebase.database().ref().child("profilePics");
-
+    var user = firebase.auth().currentUser;
     databaseRef.once("value").then(function(snapshot){
     var pictureName = picture["pictureName"];
     var dateStr = new Date().getTime();
     var fileCompleteName = pictureName + "_" + dateStr;
-    var user = firebase.auth().currentUser;
+  
     var storageRef = firebase.storage().ref("Profile Pictres/" + auth.user.uid+"/profile.jpg");
     var blogStorageRef = storageRef.child(fileCompleteName);
 
