@@ -446,23 +446,20 @@
                   firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
               circleImg.src = imgUrl; 
               MainImg.src= imgUrl; 
+              console.log(imgUrl);
 
-                })
-                function complete(){
-            var user = firebase.auth().currentUser;
-            var userName;
-
-            firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
+                });
+                var userName;
+                firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
                 var fName = (snapshot.val() && snapshot.val().firstName);
                 var lName = (snapshot.val() && snapshot.val().lastName);
 
                 userName = fName + " " + lName;
 
                 document.getElementById("p1").innerHTML = userName;
+                console.log(userName);
                
             }); 
-                }
-                
                 }
                 
             });
