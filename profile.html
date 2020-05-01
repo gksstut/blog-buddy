@@ -262,7 +262,7 @@
     var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").put(picture);
     
 
-    var uploadTask = StorageRef;
+    var uploadTask = storageRef;
 
     uploadTask.on("state_changed",
         function progress(snapshot){
