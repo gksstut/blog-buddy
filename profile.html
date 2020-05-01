@@ -89,7 +89,7 @@
       <div class="profile">
         <img src="" alt="" class="img-fluid rounded-circle" id="circleImg">
         <h1 class="text-light"><a href="#">
-          <output>Moses</output>
+          <p id="p1">Hello World!</p>
 
         </a></h1>
         <div class="social-links mt-3 text-center">
@@ -291,7 +291,8 @@
                 var lName = (snapshot.val() && snapshot.val().lastName);
 
                 userName = fName + " " + lName;
-                
+
+                document.getElementById("p1").innerHTML = userName;
                
             }); 
 
