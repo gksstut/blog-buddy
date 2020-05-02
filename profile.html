@@ -118,8 +118,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1><p id= "p2">Alex Smith</p></h1>
-      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+      <h1><p id= "p2">UserName/p></h1>
+      <p>I'm <span class="typed" data-typed-items="Student, Developer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -138,7 +138,7 @@
             <img src="" class="img-fluid" alt="" id="MainImg">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>UI/UX Designer &amp; Web Developer.</h3>
+            <h3>Student's  information.</h3>
             <p class="font-italic" id="userB">
               Bio:
             </p>
@@ -147,7 +147,7 @@
                 <ul>
                   <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1 May 1995</li>
                   <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +123 456 7890</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> <p id="SphoneNum">+123 456 7890</p></li>
                   <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : New York, USA</li>
                 </ul>
               </div>
@@ -178,9 +178,8 @@
     <script>
         counter = 0; 
     </script>
-    <div class="container text-center">
+    <div >
         <form id="main-form">
-         
 
             <div class="form-group">
                 <input type="file" class="form-control" id="main-image"/>
@@ -447,12 +446,16 @@
                 var fName = (snapshot.val() && snapshot.val().firstName);
                 var lName = (snapshot.val() && snapshot.val().lastName);
                 var userBio = (snapshot.val() && snapshot.val().bio);
+                var userPhone = (snapshot.val() && snapshot.val().phone);
 
                 userName = fName + " " + lName;
 
                 document.getElementById("p1").innerHTML = userName;
                 document.getElementById("p2").innerHTML = userName;
                 document.getElementById("userB").innerHTML = userBio;
+                document.getElementById("SphoneNum").innerHTML = userPhone;
+
+                
                 console.log(userName);
                
             }); 
