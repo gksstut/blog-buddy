@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  
-  
-  
-  
-  
-  
-  
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  
 
 <head>
  
@@ -23,9 +9,7 @@
 
 
   
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
+
       
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -35,9 +19,6 @@
         <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
   
   
       
@@ -147,7 +128,7 @@
                 <ul>
                   <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1 May 1995</li>
                   <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
-                  <li ><i class="icofont-rounded-right"></i> <strong>Phone:</strong><li id="SphoneNum"> +123 456 7890</li></li>
+                  <li  ><i class="icofont-rounded-right"></i> <strong>Phone:</strong><output id="SphoneNum"> +123 456 7890</output></li>
                   <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : New York, USA</li>
                 </ul>
               </div>
@@ -208,11 +189,8 @@
 
     </div>
 </div>
-<!--------------------------------------------Blog Post Area Ends here---------------------------------------------->
-<!---------------------------------------------After Blog Post Area------------------------------------------------->
 
-<!----------------------------------------After Blog Post Area Ends here---------------------------------------------->
-<!----------------------------------------Validation of uploading blogs---------------------------------------------->
+<!----------------------------------------Validation of uploading Profile Pictures---------------------------------------------->
  <script>
     var validImagetypes = ["image/gif", "image/jpeg", "image/png"];
                     
@@ -234,7 +212,7 @@
         previewImage(this);
     });
 
-    //**********************Post button************************//
+    //**********************upload button************************//
     $("#btn-upload").click(function(){
   
     $("#main-image").removeClass("is-invalid");
@@ -343,7 +321,7 @@
 
 
     });
-    //**********************Post button ends here************************//
+    //**********************upload button ends here************************//
 //**************************************Upload and save to storage and databse ends here**************************************                    
     function resetForm(){
         $("#main-form")[0].reset();
@@ -353,16 +331,10 @@
 	</script>
   
   
-  
-  
-  
-  
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------->
-  <!-----------------------------------------------------------------------------FROM MAIN PAGE-------------------------
+
 	
 	
-    <!- ======= Facts Section ======= -->
+    <!-- ======= Facts Section ======= -->
     <section id="facts" class="facts">
       <div class="container">
 
