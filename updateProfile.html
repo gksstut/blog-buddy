@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!--  This file has been downloaded from https://bootdey.com  -->
+		<!--  All snippets are MIT license https://bootdey.com/license -->
+		<title>Bootdey.com</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		 <link href="cs/updatePro.css" rel="stylesheet">
+
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+		 
+		 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+		 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+		 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+		 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+   
+   
+   
+   
+ 
+ 
+		
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="view-account">
+				<section class="module">
+					<div class="module-inner">
+						<div class="side-bar">
+							<div class="user-info">
+								<img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+								<ul class="meta list list-unstyled">
+									<li class="name">Rebecca Sanders
+										<label class="label label-info">UX Designer</label>
+									</li>
+									<li class="email"><a href="#">Rebecca.S@website.com</a></li>
+									<li class="activity">Last logged in: Today at 2:18pm</li>
+								</ul>
+							</div>
+							<nav class="side-menu">
+								<ul class="nav">
+									<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
+									<li><a href="#"><span class="fa fa-cog"></span> Settings</a></li>
+									<li><a href="#"><span class="fa fa-credit-card"></span> Billing</a></li>
+									<li><a href="#"><span class="fa fa-envelope"></span> Messages</a></li>
+									
+									<li><a href="user-drive.html"><span class="fa fa-th"></span> Drive</a></li>
+									<li><a href="#"><span class="fa fa-clock-o"></span> Reminders</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="content-panel">
+							<h2 class="title">Profile<span class="pro-label label label-warning">PRO</span></h2>
+							<form class="form-horizontal">
+								<fieldset class="fieldset">
+									<h3 class="fieldset-title">Personal Info</h3>
+									<div class="form-group avatar">
+										<figure class="figure col-md-2 col-sm-3 col-xs-12">
+											<img class="img-rounded img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+										</figure>
+										<div class="form-inline col-md-10 col-sm-9 col-xs-12">
+											<input type="file" class="file-uploader pull-left" id="main-image">
+											<div class="invalid-feedback">
+											      Please choose a vaild picture
+											</div>
+											
+											<div class="form-group">
+													<img id="selected-image" width="250" height="150" src="#"/>            
+												</div>
+												<div class="form-group">
+													<div class="progress bg-secondary">
+														<div class="progress-bar bg-success" id="upload-progress" styles="width: 0%;">0%</div>
+													</div>
+												</div>
+											
+											<button id="btn-upload" type="submit" class="btn btn-sm btn-default-alt pull-left">Update Image</button>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-sm-3 col-xs-12 control-label">User Name</label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input type="text" class="form-control" value="Rebecca">
+										</div>
+									</div>
+				
+									<div class="form-group">
+										<label class="col-md-2 col-sm-3 col-xs-12 control-label">First Name</label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input type="text" class="form-control" value="Rebecca">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-sm-3 col-xs-12 control-label">Last Name</label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input type="text" class="form-control" value="Sanders">
+										</div>
+									</div>
+								</fieldset>
+								<fieldset class="fieldset">
+									<h3 class="fieldset-title">Contact Info</h3>
+									<div class="form-group">
+										<label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input type="email" class="form-control" value="Rebecca@website.com">
+											<p class="help-block">This is the email </p>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2  col-sm-3 col-xs-12 control-label">Twitter</label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input type="text" class="form-control" value="SpeedyBecky">
+											<p class="help-block">Your twitter username</p>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2  col-sm-3 col-xs-12 control-label">Linkedin</label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input type="url" class="form-control" value="https://www.linkedin.com/in/lorem">
+											<p class="help-block">eg. https://www.linkedin.com/in/yourname</p>
+										</div>
+									</div>
+								</fieldset>
+								<hr>
+								<div class="form-group">
+									<div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+										<input class="btn btn-primary" type="submit" value="Update Profile">
+									</div>
+								</div>
+							</form>
+							 <div id="result">
+
+							</div> 
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+<!---upload profile picture -->
+<!---upload profile picture -->
+
+<!----------------------------------------Validation of uploading Profile Pictures---------------------------------------------->
+ <script>
+    var validImagetypes = ["image/gif", "image/jpeg", "image/png"];
+                    
+    $("#selected-image").hide();
+
+    function previewImage(image_blog){
+        if(image_blog.files && image_blog.files[0]){
+            var reader = new FileReader();
+
+            reader.onload = function(e){
+            $("#selected-image").attr('src',e.target.result);
+            $("#selected-image").fadeIn();
+            }
+            reader.readAsDataURL(image_blog.files[0]);
+        }
+    }
+
+    $("#main-image").change(function(){
+        previewImage(this);
+    });
+
+    //**********************upload button************************//
+    $("#btn-upload").click(function(){
+  
+    $("#main-image").removeClass("is-invalid");
+
+ 
+    var picture = $("#main-image").prop("files")[0];
+
+  
+                             
+    if(picture == null){
+        $("#main-image").addClass("is-invalid");
+        return; 
+    }
+
+    if($.inArray(picture["type"], validImagetypes)<0){
+        $("#main-image").addClass("is-invalid");
+        return;
+    }
+    //******************************************Upload and save to storage and databse********************************************
+    var databaseRef = firebase.database().ref().child("profilePics");
+
+    databaseRef.once("value").then(function(snapshot){
+    var pictureName = picture["pictureName"];
+    var dateStr = new Date().getTime();
+    var fileCompleteName = pictureName + "_" + dateStr;
+    var user = firebase.auth().currentUser;
+    var storageRef = firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").put(picture);
+    
+    var uploadTask = storageRef;
+
+    uploadTask.on("state_changed",
+        function progress(snapshot){
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+                $("#upload-progress").html(Math.round(percentage) + "%");
+                $("#upload-progress").attr("style", "width:" + percentage + "%");
+                
+         },
+         function error(err){
+
+        },
+        function complete(){
+            var user = firebase.auth().currentUser;
+            var userName;
+
+            firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
+                var fName = (snapshot.val() && snapshot.val().firstName);
+                var lName = (snapshot.val() && snapshot.val().lastName);
+
+                userName = fName + " " + lName;
+
+               // document.getElementById("p1").innerHTML = userName;
+               
+            }); 
+
+
+           firebase.auth().onAuthStateChanged(function(user){ 
+        if(user){
+            var userID = firebase.auth().currentUser.uid;
+            firebase.storage().ref("Profile Pictres/" + user.uid +"/profile.jpg").getDownloadURL().then(imgUrl =>{
+              circleImg.src = imgUrl; 
+              MainImg.src= imgUrl; 
+            })
+        }
+    });
+
+
+
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl){
+                var time = new Date();
+ 
+          
+
+                var blogData = {
+                    "image": downloadUrl,
+                    "pictureName": fileCompleteName,
+                   
+                    "uid": user.uid,
+                    "counter": 5000 - counter,
+                    "userName": userName,
+                    
+                }; 
+
+                var newPostRef = databaseRef.push();
+
+                newPostRef.set(blogData, function(err){
+                    if(err){
+                        $("#result").attr("class","alert alert-danger");
+                        $("#result").html(err,message);
+                    }
+                    else{
+                        $("#result").attr("class","alert alert-success");
+                        $("#result").html("Your profile picture has been uploaded successfully.");
+
+                        window.open("","_self");
+                    }
+
+                    resetForm();
+                });
+
+            });
+        }
+    );
+    });
+    
+
+
+    });
+    //**********************upload button ends here************************//
+//**************************************Upload and save to storage and databse ends here**************************************                    
+    function resetForm(){
+        $("#main-form")[0].reset();
+        $("#selected-image").fadeOut();
+        $("#upload-progress").html("Completed");
+    }
+	</script>
+  
+
+<!---upload profile picture -->
+<!---upload profile picture -->
+		
+		<script src="js/index.js"></script>
+        <script>
+            firebase.auth().onAuthStateChanged(function(user)
+            {
+                if(!user){
+                    window.location.href = "signin.html";
+                }
+            });
+        </script>
+
+		
+	</body>
+</html>
