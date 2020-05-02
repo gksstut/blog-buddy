@@ -188,7 +188,7 @@ $("#btn-profie").click(function()
 });
 
 ///////////////////////Profile page///////////////////////////////////////////////////
-$("#btn-update").click(function(){
+$("#btn-goProfile").click(function(){
   window.location.href="updateProfile.html"
   
   });
