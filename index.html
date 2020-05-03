@@ -1,119 +1,180 @@
 <html>
-    <head>
-        <title>Buddy Blog singUp</title>
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            
-            <!-- MATERIAL DESIGN ICONIC FONT -->
-        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-                
-                <!-- STYLE CSS -->
-        <link rel="stylesheet" href="design_files/css/style.css">
 
-   
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+<head>
+  <title>Buddy Blog singUp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- MATERIAL DESIGN ICONIC FONT -->
+  <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="design_files/css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+</head>
 
-
-    </head>
-
-
-
-    <body>
-        <div class= "wrapper" style="background-image: url(design_files/images/loginback1.jpg)">
-        <div class="inner">
-
-
-            <div class="image-holder">
-				<div class="w3-content w3-section" style="max-width:500px">
-					<img class="mySlides" src="design_files/images/login1.jpg" style="width:100%">
-					<img class="mySlides" src="design_files/images/login4.jpg" style="width:100%">
-					<img class="mySlides" src="design_files/images/login3.jpg" style="width:100%">
-				</div>
-			</div>
-			<script>
-				var myIndex = 0;
-				carousel();
-
-				function carousel()
-				{
-					var i;
-					var x = document.getElementsByClassName("mySlides");
-					for (i = 0; i < x.length; i++)
-					{
-						x[i].style.display = "none";  
-					}
-					myIndex++;
-					if (myIndex > x.length) {myIndex = 1}    
-					x[myIndex-1].style.display = "block";  
-					setTimeout(carousel, 2500); // Change image every 2 seconds
-				}
-			</script>           
-            <form action="">
-                <h3>Register</h3>
-                
-                <div class="form-wrapper">
-                    <input id="email" type="email" placeholder="email address" class="form-control">
-                    <i class="zmdi zmdi zmdi-email"></i>
-                </div>
-    
-                <div class="form-wrapper">
-                    <input id="password" type="password" placeholder="password" class="form-control">
-                    <i class="zmdi zmdi-arrow-right"></i>
-                </div>
-    
-                <div class="form-wrapper">
-                    <input id="confirmpassword" type="password" placeholder="confirm password" class="form-control">
-                    <i class="zmdi  zmdi-lock"></i>
-                </div>
-                <div class="form-group container-login100-form-btn"> 
-                    <button id="btn-signup" type="button" >Register
-                        <i class="zmdi  zmdi-lock"></i>
-                    </button>
-                </div>
-    
-                <div class="w-full text-center" style="margin-top: 49%; font-size :15px;">
-                    <a href="signin.html" class="text-dark">Already have an account </a>
-                </div>
-    
-            </form>
-        
+<body>
+  <div class="wrapper" style="background-image: url(design_files/images/loginback1.jpg)">
+    <div class="inner">
+      <div class="image-holder">
+        <div class="w3-content w3-section" style="max-width:500px">
+          <img class="mySlides" src="design_files/images/login1.jpg" style="width:100%">
+          <img class="mySlides" src="design_files/images/login4.jpg" style="width:100%">
+          <img class="mySlides" src="design_files/images/login3.jpg" style="width:100%">
         </div>
-    </div> 
-      
-         
-<script src="js/index.js"></script>
-<script>
+      </div>
+      <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel()
+        {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++)
+          {
+            x[i].style.display = "none";
+          }
+          myIndex++;
+          if (myIndex > x.length) { myIndex = 1 }
+          x[myIndex - 1].style.display = "block";
+          setTimeout(carousel, 2500); // Change image every 2 seconds
+        }
+      </script>
+      <form action="">
+        <h3>Register</h3>
+        <div class="form-wrapper">
+          <input id="email" type="email" placeholder="email address" class="form-control">
+          <i class="zmdi zmdi zmdi-email"></i>
+        </div>
+        <div class="form-wrapper">
+          <input id="password" type="password" placeholder="password" class="form-control">
+          <i class="zmdi zmdi-arrow-right"></i>
+        </div>
+        <div class="form-wrapper">
+          <input id="confirmpassword" type="password" placeholder="confirm password" class="form-control">
+          <i class="zmdi  zmdi-lock"></i>
+        </div>
+        <div class="form-group container-login100-form-btn">
+          <button id="btn-signup" type="button">Register
+            <i class="zmdi  zmdi-lock"></i>
+          </button>
+        </div>
+        <div class="w-full text-center" style="margin-top: 49%; font-size :15px;">
+          <a href="signin.html" class="text-dark">Already have an account </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.14.2/firebase.js"></script>
+  <script src="js/index.js"></script>
+  <script>
     //---------------------------
-    
-    final FirebaseUser user = mAuth.getCurrentUser();
-    user.sendEmailVerification()
-    .addOnCompleteListener(this, new OnCompleteListener() {
-    @Override
-    public void onComplete(@NonNull Task task) {
-    // Re-enable button
-    findViewById(R.id.verify_email_button).setEnabled(true);
-    if (task.isSuccessful()) {
-    Toast.makeText(EmailPasswordActivity.this,
-    "Verification email sent to " + user.getEmail(),
-    Toast.LENGTH_SHORT).show();
-    } else {
-    Log.e(TAG, "sendEmailVerification", task.getException());
-    Toast.makeText(EmailPasswordActivity.this,
-    "Failed to send verification email.",
-    Toast.LENGTH_SHORT).show();
-    }
-    }
+    /*
+        final :FirebaseUser, user = mAuth.getCurrentUser();
+        user.sendEmailVerification().addOnCompleteListener(this, newOnCompleteListener() {
+    Override
+        public void onComplete(@NonNull Task task) {
+            // Re-enable button
+            findViewById(R.id.verify_email_button).setEnabled(true);
+            if (task.isSuccessful()) {
+                Toast.makeText(EmailPasswordActivity.this,
+                    "Verification email sent to " + user.getEmail(),
+                    Toast.LENGTH_SHORT).show();
+            } else {
+                Log.e(TAG, "sendEmailVerification", task.getException());
+                Toast.makeText(EmailPasswordActivity.this,
+                    "Failed to send verification email.",
+                    Toast.LENGTH_SHORT).show();
+            }
+        }
     });
-    
+    */
     //---------------------------
-    
-   /* 
-    firebase.auth().onAuthStateChanged(function(user)
+
+    firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
+      .then(function() {
+        //tell user to check email
+        Toast.makeText(EmailPasswordActivity.this,
+          "Verification email sent to " + user.getEmail(),
+          Toast.LENGTH_SHORT).show();
+
+        window.localStorage.setItem('emailForSignIn', email);
+      })
+      .catch(function(error) {
+        //announce to user something went wrong
+        Toast.makeText(EmailPasswordActivity.this,
+          "Failed to send verification email.",
+          Toast.LENGTH_SHORT).show();
+      });
+    if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
+      // Additional state parameters can also be passed via URL.
+      // This can be used to continue the user's intended action before triggering
+      // the sign-in operation.
+      // Get the email if available. This should be available if the user completes
+      // the flow on the same device where they started it.
+      var email = window.localStorage.getItem('emailForSignIn');
+      if (!email) {
+        // User opened the link on a different device. To prevent session fixation
+        // attacks, ask the user to provide the associated email again. For example:
+        email = window.prompt('Please provide your email for confirmation');
+      }
+      // The client SDK will parse the code from the link for you.
+      firebase.auth().signInWithEmailLink(email, window.location.href)
+        .then(function(result) {
+          // Clear email from storage.
+          window.localStorage.removeItem('emailForSignIn');
+          // You can access the new user via result.user
+          // Additional user info profile not available via:
+          // result.additionalUserInfo.profile == null
+          // You can check if the user is new or existing:
+          // result.additionalUserInfo.isNewUser
+        })
+        .catch(function(error) {
+          // Some error occurred, you can inspect the code: error.code
+          // Common errors could be invalid email and invalid or expired OTPs.
+        });
+    }
+
+    var credential = firebase.auth.EmailAuthProvider.credentialWithLink(
+      email, window.location.href);
+
+    // Link the credential to the current user.
+    firebase.auth().currentUser.linkWithCredential(credential)
+      .then(function(usercred) {
+        // The provider is now successfully linked.
+
+        if (user) {
+          var userID = firebase.auth().currentUser.uid;
+          firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+          {
+
+            if (snapshot.val()) {
+
+              window.location.href = "MainPage.html";
+
+            } else {
+              window.location.href = "AccountSettings.html";
+            }
+
+
+          });
+        }
+        // The phone user can now sign in with their phone number or email.
+      })
+      .catch(function(error) {
+        // Some error occurred.
+      });
+    //--------------------------------------
+
+    /*firebase.auth().onAuthStateChanged(function(user)
     {
         if(user){
             var userID = firebase.auth().currentUser.uid;
@@ -133,7 +194,7 @@
         }
     });
     */
-</script>
+  </script>
+</body>
 
-    </body>
 </html>
