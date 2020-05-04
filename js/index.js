@@ -252,7 +252,7 @@ window.alert("form is incomplete, please  fill in the empty fields.");
 
 
 
-btn-pro_update.addEventListener('click', (e)=>{
+btn-pro_Update.addEventListener('click', (e)=>{
 e.preventDefault();
 var phoneNum = $("#upd_phone").val();
 var StudentNum = $("#upd_studentNum").val();
