@@ -271,13 +271,13 @@ var usersRef = rootRef.child(userID);
 
 
 const newData={
-  "userName" :userName.value,
-  "phone": phoneNum.value,
-  "studentNum": StudentNum.value,
-  "bio":bio.value,
-  "firstName": firstName.value,
-  "university":university.value,
-  "lastName": lastName.value,
+  "userName" :userName,
+  "phone": phoneNum,
+  "studentNum": StudentNum,
+  "bio":bio,
+  "firstName": firstName,
+  "university":university,
+  "lastName": lastName,
 
 
 };
