@@ -252,8 +252,8 @@ window.alert("form is incomplete, please  fill in the empty fields.");
 
 
 
-btn-pro_Update.addEventListener('click', (e)=>{
-e.preventDefault();
+$("#btn-pro_Update").click(function()
+{
 var phoneNum = $("#upd_phone").val();
 var StudentNum = $("#upd_studentNum").val();
 var bio = $("#upd_bio").val();
@@ -271,6 +271,7 @@ var usersRef = rootRef.child(userID);
 
 
 const newData={
+  "userName" :userName.value,
   "phone": phoneNum.value,
   "studentNum": StudentNum.value,
   "bio":bio.value,
@@ -280,6 +281,7 @@ const newData={
 
 
 };
+console.log(lastName);
 
 rootRef.update(newData, function(error)
 {
