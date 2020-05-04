@@ -8,11 +8,18 @@ var firebaseConfig = {
   appId: "1:222785122276:web:5105ed633c76b45e9321f1",
   measurementId: "G-R4K9HWH7PW"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 
 firebase.auth.Auth.Persistence.LOCAL;
+
+
+
+
+
+
 
 //Login buttun starts here
 $("#btn-login").click(function()
@@ -117,29 +124,29 @@ if(email != ""){
 //Accont Seetings
 $("#btn-update").click(function()
 {
-var phoneNum = $("#phone").val();
-var StudentNum = $("#studentNum").val();
-var bio = $("#bio").val();
-var university = $("#university").val();
-var firstName = $("#firstName").val();
-var lastName = $("#lastName").val();
-var gender= $("#Gender").val();
-
-var rootRef = firebase.database().ref().child("Users");
-var userID = firebase.auth().currentUser.uid;
-var usersRef = rootRef.child(userID); 
+  var phoneNum = $("#phone").val();
+  var StudentNum = $("#studentNum").val();
+  var bio = $("#bio").val();
+  var university = $("#university").val();
+  var firstName = $("#firstName").val();
+  var lastName = $("#lastName").val();
+  var gender= $("#Gender").val();
+  
+  var rootRef = firebase.database().ref().child("Users");
+  var userID = firebase.auth().currentUser.uid;
+  var usersRef = rootRef.child(userID); 
 
 if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
 
 var userData = 
 {
-  "phone": phoneNum,
-  "studentNum": StudentNum,
-  "bio":bio,
-  "firstName": firstName,
-  "university":university,
-  "lastName": lastName,
-  "Gender": gender,
+  "phone": phoneNum.value,
+  "studentNum": StudentNum.value,
+  "bio":bio.value,
+  "firstName": firstName.value,
+  "university":university.value,
+  "lastName": lastName.value,
+  "Gender": gender.value,
 };
 
 usersRef.set(userData, function(error)
@@ -195,6 +202,7 @@ $("#btn-goProfile").click(function(){
 ///////////////////////Profile page///////////////////////////////////////////////////
 
 // Update profie page 
+/*
 $("#btn-pro_Update").click(function()
 {
 
@@ -240,3 +248,40 @@ window.alert("form is incomplete, please  fill in the empty fields.");
 }
 
 });
+*/
+
+
+
+btn-pro_update.addEventListener('click', (e)=>{
+e.preventDefault();
+var phoneNum = $("#upd_phone").val();
+var StudentNum = $("#upd_studentNum").val();
+var bio = $("#upd_bio").val();
+var university = $("#upd_university").val();
+var firstName = $("#upd_firstName").val();
+var lastName = $("#upd_lastName").val();
+var gender= $("#upd_Gender").val();
+var userName = $("upd_userName").val();
+
+var rootRef = firebase.database().ref().child("Users");
+var userID = firebase.auth().currentUser.uid;
+var usersRef = rootRef.child(userID); 
+
+
+
+
+const newData={
+  "phone": phoneNum.value,
+  "studentNum": StudentNum.value,
+  "bio":bio.value,
+  "firstName": firstName.value,
+  "university":university.value,
+  "lastName": lastName.value,
+  
+
+
+}
+
+
+}
+);
