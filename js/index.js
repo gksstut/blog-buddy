@@ -263,7 +263,7 @@ var lastName = $("#upd_lastName").val();
 var gender= $("#upd_Gender").val();
 var userName = $("upd_userName").val();
 
-var rootRef = firebase.database().ref().child("Users");
+var rootRef = firebase.database().ref("Users");
 var userID = firebase.auth().currentUser.uid;
 var usersRef = rootRef.child(userID); 
 
@@ -277,11 +277,31 @@ const newData={
   "firstName": firstName.value,
   "university":university.value,
   "lastName": lastName.value,
-  
 
+
+};
+
+rootRef.update(newData, function(error)
+{
+
+if (error) {
+
+var errorCode= error.code;
+var errorMessage= error.message;
+
+console.log(errorCode);
+console.log(errorMessage);
+
+window.alert("Message : " + errorMessage);
+
+} else {
+  window.alert("Profile successfully updated");
 
 }
 
 
-}
-);
+
+});
+
+
+});
