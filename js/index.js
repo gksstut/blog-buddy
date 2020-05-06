@@ -124,7 +124,7 @@ if(email != ""){
 //Accont Seetings
 $("#btn-update").click(function()
 {
-  //var phoneNum = $("#phone").val();
+  var phoneNum = $("#phone").val();
   var StudentNum = $("#studentNum").val();
   var bio = $("#bio").val();
   var university = $("#university").val();
@@ -136,35 +136,35 @@ $("#btn-update").click(function()
   var userID = firebase.auth().currentUser.uid;
   var usersRef = rootRef.child(userID); 
 
-if ( studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
+if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
 
-var userData = 
-{
-  //"phone": phoneNum.value,
-  "studentNum": StudentNum.value,
-  "bio":bio.value,
-  "firstName": firstName.value,
-  "university":university.value,
-  "lastName": lastName.value,
-  "Gender": gender.value,
-};
+  var userData = 
+  {
+    "phone": phoneNum,
+    "studentNum": StudentNum,
+    "bio":bio,
+    "firstName": firstName,
+    "university":university,
+    "lastName": lastName,
+    "Gender": gender,
+  };
 
 usersRef.set(userData, function(error)
 {
 
 if (error) {
 
-var errorCode= error.code;
-var errorMessage= error.message;
+  var errorCode= error.code;
+  var errorMessage= error.message;
 
-console.log(errorCode);
-console.log(errorMessage);
+  console.log(errorCode);
+  console.log(errorMessage);
 
-window.alert("Message : " + errorMessage);
-
+  window.alert("Message : " + errorMessage);
+  
 } else {
-window.location.href= "MainPage.html";
-
+  window.location.href= "MainPage.html";
+  
 }
 
 
@@ -172,7 +172,7 @@ window.location.href= "MainPage.html";
 });
 
 } else {
-window.alert("form is incomplete, please  fill in the empty fields.");
+  window.alert("form is incomplete, please  fill in the empty fields.");
 }
 
 });
