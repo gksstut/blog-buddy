@@ -308,3 +308,5 @@ if (error) {
 } else {
   window.alert("form is incomplete, please  fill in the empty fields.");
 }
+
+});
