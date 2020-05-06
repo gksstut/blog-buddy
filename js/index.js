@@ -280,8 +280,8 @@ if ( bio!=""  ) {
   "phone": phoneNum,
   "studentNum":StudentNum,
   "university":university,
-  "userName": userName,
-})
+  
+});
 
 console.log(bio);
 
