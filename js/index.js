@@ -262,37 +262,21 @@ $("#btn-pro_Update").click(function()
   var rootRef = firebase.database().ref().child("Users");
   var userID = firebase.auth().currentUser.uid;
   var usersRef = rootRef.child(userID); 
+  var user = firebase.auth().currentUser;
 
 if ( bio!=""  ) {
 
-var userData = 
-{
- 
-  "bio":bio,
- 
-};
-console.log(bio);
-usersRef.set(userData, function(error)
-{
 
-if (error) {
-
-var errorCode= error.code;
-var errorMessage= error.message;
-
-console.log(errorCode);
-console.log(errorMessage);
-
-window.alert("Message : " + errorMessage);
-
-} else {
-  window.alert("mxm y'all changed your details");
-
-}
-
-
-
+user.updateProfile({
+  bio: "Jane Q. User",
+}).then(function() {
+  // Update successful.
+}).catch(function(error) {
+  // An error happened.
 });
+
+console.log(bio);
+
 
 } else {
 window.alert("form is incomplete, please  fill in the empty fields.");
