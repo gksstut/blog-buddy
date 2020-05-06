@@ -329,8 +329,8 @@
                 var userBio = (snapshot.val() && snapshot.val().bio);
 				var userPhone = (snapshot.val() && snapshot.val().phone);
 				var studeNum = (snapshot.val() && snapshot.val().studentNum);
-
-				
+				var  userName= "";
+				userName = fName + " " + lName;
 				upd_firstName.value = fName; 
 				upd_bio.value = userBio;
 				upd_lastName.value = lName;
