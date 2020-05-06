@@ -283,7 +283,7 @@ const newData={
 };
 console.log(lastName);
 
-rootRef.update(newData, function(error)
+rootRef.update(newData); /*function(error)
 {
 
 if (error) {
@@ -304,6 +304,7 @@ window.alert("Message : " + errorMessage);
 
 
 });
-
+*/
 
 });
+
