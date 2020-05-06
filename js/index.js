@@ -273,11 +273,11 @@ if ( bio!=""  ) {
 
   usersRef.update({
 
-  "userName": userName,
+
   "bio":bio,
   "firstName": firstName,
-
   "lastName": lastName,
+  "phone": phoneNum,
 })
 
 console.log(bio);
