@@ -272,12 +272,37 @@ var userName = $("upd_userName").val();
 if ( bio!=""  ) {
 
   usersRef.update({
-
   
   "bio":bio,
+});
 
+usersRef.update({
+  
+  "firstName": firstName,
+
+});
+usersRef.update({
+  
+  "lastName": lastName,
   
 });
+usersRef.update({
+  
+  "phone": phoneNum,
+ 
+});
+usersRef.update({
+  
+  "studentNum":StudentNum,
+ 
+});
+usersRef.update({
+  
+  "university":university,
+});
+
+
+
 
 console.log(bio);
 
