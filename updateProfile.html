@@ -237,7 +237,7 @@
 
                 userName = fName + " " + lName;
 
-               document.getElementById("p1").innerHTML = userName;
+               
                
             }); 
 
@@ -327,17 +327,19 @@
                 var fName = (snapshot.val() && snapshot.val().firstName);
                 var lName = (snapshot.val() && snapshot.val().lastName);
                 var userBio = (snapshot.val() && snapshot.val().bio);
-                var userPhone = (snapshot.val() && snapshot.val().phone);
+				var userPhone = (snapshot.val() && snapshot.val().phone);
+				var studeNum = (snapshot.val() && snapshot.val().studentNum);
 
 				
 				upd_firstName.value = fName; 
 				upd_bio.value = userBio;
 				upd_lastName.value = lName;
 				upd_phone.value = userPhone;
-             
+				upd_studentNum= studeNum;
+				document.getElementById("p1").innerHTML = userName;
 
                 
-                console.log(userName);
+               // console.log(userName);
                
             }); 
                 }
