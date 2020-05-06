@@ -276,7 +276,7 @@ if ( bio!=""  ) {
 
  
   "phone": phoneNum,
-  "studentNum": StudentNum,
+  
   "bio":bio,
   "firstName": firstName,
   "university":university,
