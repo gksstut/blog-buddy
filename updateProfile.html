@@ -112,16 +112,12 @@
 									</div>
 
 
-									<div class="form-wrapper">
-										<select name= "" id="university" class="form-control" >
-											<option value="" disabled selected>University</option>
-											<option value="Tshwane University of technology">Tshwane University of technology</option>
-											<option value="University of Pretoria">University of Pretoria</option>
-											<option value="Unisa">Unisa</option>
-											<option value="University of the witwatersrand">University of the witwatersrand</option>
-											<option value="University of Johannesburg">University of Johannesburg</option>
-										</select>
-										<i class="zmdi  zmdi-caret-down" style="font-size: 17px;"></i>
+									<div class="form-group">
+										<label class="col-md-2 col-sm-3 col-xs-12 control-label"><p>Student Number</p></label>
+										<div class="col-md-10 col-sm-9 col-xs-12">
+											<input id="upd_studentNum" type="number" class="form-control" value="(+27)663954880">
+											<p class="help-block">Your studentnumber </p>
+										</div>
 									</div>
 
 								</fieldset>
@@ -134,7 +130,7 @@
 											<p class="help-block">This is the email </p>
 										</div>
 									</div>
-									<br>
+								
 									<div class="form-group">
 										<label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone Number</label>
 										<div class="col-md-10 col-sm-9 col-xs-12">
@@ -142,30 +138,11 @@
 											<p class="help-block">Your cell phone number </p>
 										</div>
 									</div>
-									<br>
-									<div class="form-group">
-										<label class="col-md-2 col-sm-3 col-xs-12 control-label"><p>Student Number</p></label>
-										<div class="col-md-10 col-sm-9 col-xs-12">
-											<input id="upd_studentNum" type="number" class="form-control" value="(+27)663954880">
-											<p class="help-block">Your studentnumber </p>
-										</div>
-									</div>
-<br>
-									<div class="form-group">
-										<label class="col-md-2  col-sm-3 col-xs-12 control-label">Twitter</label>
-										<div class="col-md-10 col-sm-9 col-xs-12">
-											<input type="text" class="form-control" value="SpeedyBecky">
-											<p class="help-block">Your twitter username</p>
-										</div>
-									</div>
-									<br>
-									<div class="form-group">
-										<label class="col-md-2  col-sm-3 col-xs-12 control-label">Linkedin</label>
-										<div class="col-md-10 col-sm-9 col-xs-12">
-											<input type="url" class="form-control" value="https://www.linkedin.com/in/lorem">
-											<p class="help-block">eg. https://www.linkedin.com/in/yourname</p>
-										</div>
-									</div>
+						
+								
+
+							
+								
 								</fieldset>
 								<hr>
 								<div class="form-group">
@@ -354,7 +331,7 @@
 
 				userName = fName + " " + lName;
 				upd_firstName.value=fName; 
-				upd_bio.value=bio;
+				upd_bio.value=userBio;
 				upd_lastName.value=lName;
 				upd_phone.value = userPhone;
              
