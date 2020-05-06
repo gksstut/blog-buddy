@@ -273,7 +273,7 @@ if ( bio!=""  ) {
 
   usersRef.update({
 
-
+  "userName": userName,
   "bio":bio,
   "firstName": firstName,
 
