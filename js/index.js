@@ -274,7 +274,7 @@ if ( bio!=""  ) {
   usersRef.update({
 
   "phone": phoneNum,
-  "studentNum": StudentNum,
+  
   "bio":bio,
   "firstName": firstName,
   "university":university,
