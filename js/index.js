@@ -275,11 +275,7 @@ if ( bio!=""  ) {
 
   
   "bio":bio,
-  "firstName": firstName,
-  "lastName": lastName,
-  "phone": phoneNum,
-  "studentNum":StudentNum,
-  "university":university,
+
   
 });
 
