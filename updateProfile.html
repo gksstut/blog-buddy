@@ -328,7 +328,9 @@
                 var userBio = (snapshot.val() && snapshot.val().bio);
 				var userPhone = (snapshot.val() && snapshot.val().phone);
 				var studeNum = (snapshot.val() && snapshot.val().studentNum);
+				var uni = (snapshot.val() && snapshot.val().university);
 				var  userName= "";
+
 				userName = fName + " " + lName;
 				upd_firstName.value = fName; 
 				upd_bio.value = userBio;
@@ -336,6 +338,7 @@
 				upd_phone.value = userPhone;
 				upd_studentNum.value= studeNum;
 				document.getElementById("p1").innerHTML = userName;
+				document.getElementById("p2").innerHTML = uni;
 
                 
                // console.log(userName);
