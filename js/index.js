@@ -268,7 +268,7 @@ if ( bio!=""  ) {
 var userData = 
 {
  
-  "bio":bio.value,
+  "bio":bio,
  
 };
 console.log(bio);
