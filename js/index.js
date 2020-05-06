@@ -272,10 +272,10 @@ if ( firstName!=""  ) {
 
 var userData = 
 {
-  "userName" :userName,
-  "phone": phoneNum,
+  "userName" :userName.value,
+  "phone": phoneNum.value,
   "studentNum": StudentNum,
-  "bio":bio,
+  "bio":bio.value,
   "firstName": firstName,
   "university":university,
   "lastName": lastName,
