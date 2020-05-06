@@ -254,23 +254,24 @@ window.alert("form is incomplete, please  fill in the empty fields.");
 
 $("#btn-pro_Update").click(function()
 {
-var phoneNum = $("#upd_phone").val();
-var StudentNum = $("#upd_studentNum").val();
-var bio = $("#upd_bio").val();
-var university = $("#upd_university").val();
-var firstName = $("#upd_firstName").val();
-var lastName = $("#upd_lastName").val();
-var gender= $("#upd_Gender").val();
-var userName = $("upd_userName").val();
+  var phoneNum = $("#upd_phone").val();
+  var StudentNum = $("#upd_studentNum").val();
+  var bio = $("#upd_bio").val();
+  var university = $("#upd_university").val();
+  var firstName = $("#upd_firstName").val();
+  var lastName = $("#upd_lastName").val();
+  var gender= $("#upd_Gender").val();
+  var userName = $("upd_userName").val();
+  
+  
+  var rootRef = firebase.database().ref().child("Users");
+  var userID = firebase.auth().currentUser.uid;
+  var usersRef = rootRef.child(userID); 
 
-var rootRef = firebase.database().ref("Users");
-var userID = firebase.auth().currentUser.uid;
-var usersRef = rootRef.child(userID); 
+if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
 
-
-
-
-const newData={
+var userData = 
+{
   "userName" :userName,
   "phone": phoneNum,
   "studentNum": StudentNum,
@@ -278,12 +279,9 @@ const newData={
   "firstName": firstName,
   "university":university,
   "lastName": lastName,
-
-
 };
-console.log(lastName);
 
-rootRef.update(newData); /*function(error)
+usersRef.set(userData, function(error)
 {
 
 if (error) {
@@ -297,14 +295,16 @@ console.log(errorMessage);
 window.alert("Message : " + errorMessage);
 
 } else {
-  window.alert("Profile successfully updated");
+  window.alert("mxm y'all changed your details");
 
 }
 
 
 
 });
-*/
 
-});
+} else {
+window.alert("form is incomplete, please  fill in the empty fields.");
+}
 
+})
