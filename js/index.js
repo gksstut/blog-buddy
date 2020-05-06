@@ -124,7 +124,7 @@ if(email != ""){
 //Accont Seetings
 $("#btn-update").click(function()
 {
-  var phoneNum = $("#phone").val();
+  //var phoneNum = $("#phone").val();
   var StudentNum = $("#studentNum").val();
   var bio = $("#bio").val();
   var university = $("#university").val();
@@ -136,11 +136,11 @@ $("#btn-update").click(function()
   var userID = firebase.auth().currentUser.uid;
   var usersRef = rootRef.child(userID); 
 
-if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
+if ( studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
 
 var userData = 
 {
-  "phone": phoneNum.value,
+  //"phone": phoneNum.value,
   "studentNum": StudentNum.value,
   "bio":bio.value,
   "firstName": firstName.value,
