@@ -274,7 +274,7 @@ if ( bio!=""  ) {
   var userData = 
   {
 
-  "userName" :userName,
+ 
   "phone": phoneNum,
   "studentNum": StudentNum,
   "bio":bio,
