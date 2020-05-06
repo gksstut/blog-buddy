@@ -271,42 +271,21 @@ var userName = $("upd_userName").val();
 
 if ( bio!=""  ) {
 
-  var userData = 
-  {
-
- 
+  usersRef.update({
+  "userName" :userName,
   "phone": phoneNum,
-  
+  "studentNum": StudentNum,
   "bio":bio,
   "firstName": firstName,
   "university":university,
   "lastName": lastName,
-  };
+})
 
-usersRef.update(userData, function(error)
-{
+console.log(bio);
 
-if (error) {
-
-  var errorCode= error.code;
-  var errorMessage= error.message;
-
-  console.log(errorCode);
-  console.log(errorMessage);
-
-  window.alert("Message : " + errorMessage);
-  
-} else {
-  window.alert("Profile successully updated");
-  
-}
-
-
-
-});
 
 } else {
-  window.alert("form is incomplete, please  fill in the empty fields.");
+window.alert("form is incomplete, please  fill in the empty fields.");
 }
 
 });
