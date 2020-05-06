@@ -272,7 +272,7 @@ var userName = $("upd_userName").val();
 if ( bio!=""  ) {
 
   usersRef.update({
-  "userName" :userName,
+
   "phone": phoneNum,
   "studentNum": StudentNum,
   "bio":bio,
