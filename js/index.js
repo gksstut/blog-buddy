@@ -266,14 +266,7 @@ $("#btn-pro_Update").click(function()
 
 if ( bio!=""  ) {
 
-
-user.updateProfile({
-  bio: "Jane Q. User",
-}).then(function() {
-  // Update successful.
-}).catch(function(error) {
-  // An error happened.
-});
+  usersRef.update({'bio': bio, })
 
 console.log(bio);
 
