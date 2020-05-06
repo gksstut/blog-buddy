@@ -268,7 +268,7 @@ $("#btn-pro_Update").click(function()
   var userID = firebase.auth().currentUser.uid;
   var usersRef = rootRef.child(userID); 
 
-if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastName !="" && gender!="" ) {
+if ( firstName!=""  ) {
 
 var userData = 
 {
