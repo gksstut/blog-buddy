@@ -255,10 +255,15 @@ window.alert("form is incomplete, please  fill in the empty fields.");
 $("#btn-pro_Update").click(function()
 {
 
-  var bio = $("#upd_bio").val();
- 
-  
-  
+  var phoneNum = $("#upd_phone").val();
+var StudentNum = $("#upd_studentNum").val();
+var bio = $("#upd_bio").val();
+var university = $("#upd_university").val();
+var firstName = $("#upd_firstName").val();
+var lastName = $("#upd_lastName").val();
+var gender= $("#upd_Gender").val();
+var userName = $("upd_userName").val();
+
   var rootRef = firebase.database().ref().child("Users");
   var userID = firebase.auth().currentUser.uid;
   var usersRef = rootRef.child(userID); 
@@ -266,13 +271,40 @@ $("#btn-pro_Update").click(function()
 
 if ( bio!=""  ) {
 
-  usersRef.update({'bio': bio, })
+  var userData = 
+  {
 
-console.log(bio);
+  "userName" :userName,
+  "phone": phoneNum,
+  "studentNum": StudentNum,
+  "bio":bio,
+  "firstName": firstName,
+  "university":university,
+  "lastName": lastName,
+  };
 
+usersRef.update(userData, function(error)
+{
 
+if (error) {
+
+  var errorCode= error.code;
+  var errorMessage= error.message;
+
+  console.log(errorCode);
+  console.log(errorMessage);
+
+  window.alert("Message : " + errorMessage);
+  
 } else {
-window.alert("form is incomplete, please  fill in the empty fields.");
+  window.alert("Profile successully updated");
+  
 }
 
+
+
 });
+
+} else {
+  window.alert("form is incomplete, please  fill in the empty fields.");
+}
