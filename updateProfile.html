@@ -340,6 +340,25 @@
 
                 });
 
+				firebase.database().ref('Users/'+ user.uid).once('value').then(function(snapshot){
+                var fName = (snapshot.val() && snapshot.val().firstName);
+                var lName = (snapshot.val() && snapshot.val().lastName);
+                var userBio = (snapshot.val() && snapshot.val().bio);
+                var userPhone = (snapshot.val() && snapshot.val().phone);
+
+				userName = fName + " " + lName;
+				upd_firstName.value=fName; 
+
+                document.getElementById("upd_firstName").innerHTML = fName;
+                document.getElementById("upd_lastName").innerHTML = lName;
+                document.getElementById("upd_bio").innerHTML = userBio;
+                document.getElementById("upd_firstName").innerHTML = userPhone;
+
+                
+                console.log(userName);
+               
+            }); 
+                }
 
 
 				}
