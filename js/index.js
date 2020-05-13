@@ -54,14 +54,14 @@ $("#btn-signup").click(function() {
 
     if (email != "" && password != "" && cPassword != "") {
         if (password == cPassword) {
-            firebase.auth().sendSignInLinkToEmail(email).then(function(email) {
+            firebase.auth().sendSignInLinkToEmail(email).then(function() {
                     window.localStorage.set('emailForSignIn', email);
                 }).catch(function(error) {
                     window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
                 })
                 //Email is sent still not sure
             firebase.auth().email.sendEmailVerification(email)
-                .then(function(email) {
+                .then(function() {
                     // Email sent.
                 }).catch(function(error) {
                     // An error happened.
