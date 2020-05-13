@@ -178,7 +178,13 @@ $("#btn-update").click(function() {
     } else {
         window.alert("form is incomplete, please  fill in the empty fields.");
     }
-
+    //confirm Test......
+    firebase.auth().signInWithPhoneNumber(userData.phone).then(function(confirmResult) {
+            window.confirmResult = confirmResult;
+        }).catch(function(error) {
+            window.errorCode;
+        })
+        //ddelte if cant upload information....
 });
 
 function switchView(view) {
