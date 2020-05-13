@@ -54,19 +54,7 @@ $("#btn-signup").click(function() {
 
     if (email != "" && password != "" && cPassword != "") {
         if (password == cPassword) {
-            /* firebase.auth().sendSignInLinkToEmail(email).then(function() {
-                    window.localStorage.set('emailForSignIn', email);
-                }).catch(function(error) {
-                    window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
-                })
-                //Email is sent still not sure
-            firebase.auth().email.sendEmailVerification(email)
-                .then(function() {
-                    // Email sent.
-                }).catch(function(error) {
-                    // An error happened.
-                    window.alert("Message : cant send verification code check your code again 123!!!!!" + errorMessage);
-                })*/
+
             var result = firebase.auth().createUserWithEmailAndPassword(email, password);
 
             result.catch(function(error) {
@@ -89,10 +77,21 @@ $("#btn-signup").click(function() {
         window.alert("form is incomplete, please  fill in the empty fields.");
     }
 
-
-
 });
 
+firebase.auth().sendSignInLinkToEmail(email).then(function() {
+    window.localStorage.set('emailForSignIn', email);
+}).catch(function(error) {
+    window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
+});
+//Email is sent still not sure
+firebase.auth().email.sendEmailVerification(email)
+    .then(function() {
+        // Email sent.
+    }).catch(function(error) {
+        // An error happened.
+        window.alert("Message : cant send verification code check your code again 123!!!!!" + errorMessage);
+    });
 
 
 //logout buttun starts here
