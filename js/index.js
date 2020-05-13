@@ -182,11 +182,11 @@ $("#btn-update").click(function() {
     }
     //confirm Test......
     firebase.auth().signInWithPhoneNumber(userData.phone).then(function(confirmResult) {
-            window.confirmResult = confirmResult;
-        }).catch(function(error) {
-            window.errorCode;
-        })
-        //ddelte if cant upload information....
+        window.confirmResult = confirmResult;
+    }).catch(function(error) {
+        window.errorCode;
+    });
+    //ddelte if cant upload information....
 });
 
 function switchView(view) {
