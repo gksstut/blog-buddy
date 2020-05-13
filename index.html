@@ -93,7 +93,7 @@
     firebase.auth().onAuthStateChanged(function(user)
     {
         //Email is sent still not sure
-firebase.auth().email.sendEmailVerification(email)
+    auth().email.sendEmailVerification(user.email)
     .then(function() {
         // Email sent.
     
