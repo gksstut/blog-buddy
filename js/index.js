@@ -54,7 +54,7 @@ $("#btn-signup").click(function() {
 
     if (email != "" && password != "" && cPassword != "") {
         if (password == cPassword) {
-            firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings).then(function() {
+            firebase.auth().sendSignInLinkToEmail(email).then(function() {
                     window.localStorage.set('emailForSignIn', email);
                 }).catch(function(error) {
                     window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
