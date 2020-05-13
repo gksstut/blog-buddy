@@ -53,49 +53,50 @@ $("#btn-signup").click(function() {
     var cPassword = $("#confirmpassword").val();
 
     if (email != "" && password != "" && cPassword != "") {
-        firebase.auth().sendSignInLinkToEmail(email).then(function() {
-            window.localStorage.set('emailForSignIn', email);
 
-            if (password == cPassword) {
+        if (password == cPassword) {
 
-                var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+            var result = firebase.auth().createUserWithEmailAndPassword(email, password);
 
-                result.catch(function(error) {
+            result.catch(function(error) {
 
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
+                var errorCode = error.code;
+                var errorMessage = error.message;
 
-                    console.log(errorCode);
-                    console.log(errorMessage);
+                console.log(errorCode);
+                console.log(errorMessage);
 
-                    window.alert("Message : " + errorMessage);
-                });
-            } else {
+                window.alert("Message : " + errorMessage);
+            });
+        } else {
 
-                window.alert("The password field does not match the confirm password field");
+            window.alert("The password field does not match the confirm password field");
 
-            }
-        }).catch(function(error) {
-            window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
-        })
+        }
 
     } else {
         window.alert("form is incomplete, please  fill in the empty fields.");
     }
+
+    firebase.auth().sendSignInLinkToEmail(email).then(function() {
+        window.localStorage.set('emailForSignIn', email);
+    }).catch(function(error) {
+        window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
+    });
+    //Email is sent still not sure
+    firebase.auth().email.sendEmailVerification(email)
+        .then(function() {
+            // Email sent.
+        }).catch(function(error) {
+            // An error happened.
+            window.alert("Message : cant send verification code check your code again 123!!!!!" + errorMessage);
+        });
 
 });
 
 
 
 
-//Email is sent still not sure
-firebase.auth().email.sendEmailVerification(email)
-    .then(function() {
-        // Email sent.
-    }).catch(function(error) {
-        // An error happened.
-        window.alert("Message : cant send verification code check your code again 123!!!!!" + errorMessage);
-    });
 
 
 //logout buttun starts here
