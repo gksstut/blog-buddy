@@ -53,25 +53,31 @@ $("#btn-signup").click(function() {
     var cPassword = $("#confirmpassword").val();
 
     if (email != "" && password != "" && cPassword != "") {
-        if (password == cPassword) {
+        firebase.auth().sendSignInLinkToEmail(email).then(function() {
+            window.localStorage.set('emailForSignIn', email);
 
-            var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+            if (password == cPassword) {
 
-            result.catch(function(error) {
+                var result = firebase.auth().createUserWithEmailAndPassword(email, password);
 
-                var errorCode = error.code;
-                var errorMessage = error.message;
+                result.catch(function(error) {
 
-                console.log(errorCode);
-                console.log(errorMessage);
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
 
-                window.alert("Message : " + errorMessage);
-            });
-        } else {
+                    console.log(errorCode);
+                    console.log(errorMessage);
 
-            window.alert("The password field does not match the confirm password field");
+                    window.alert("Message : " + errorMessage);
+                });
+            } else {
 
-        }
+                window.alert("The password field does not match the confirm password field");
+
+            }
+        }).catch(function(error) {
+            window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
+        });
 
     } else {
         window.alert("form is incomplete, please  fill in the empty fields.");
@@ -79,11 +85,9 @@ $("#btn-signup").click(function() {
 
 });
 
-firebase.auth().sendSignInLinkToEmail(email).then(function() {
-    window.localStorage.set('emailForSignIn', email);
-}).catch(function(error) {
-    window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
-});
+
+
+
 //Email is sent still not sure
 firebase.auth().email.sendEmailVerification(email)
     .then(function() {
