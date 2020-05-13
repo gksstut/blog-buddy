@@ -92,6 +92,11 @@
     
     firebase.auth().onAuthStateChanged(function(user)
     {
+        //Email is sent still not sure
+firebase.auth().email.sendEmailVerification(email)
+    .then(function() {
+        // Email sent.
+    
         if(user){
             var userID = firebase.auth().currentUser.uid;
             firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
@@ -108,6 +113,10 @@
 
             });
         }
+        }).catch(function(error) {
+        // An error happened.
+        window.alert("Message : cant send verification code check your code again 123!!!!!" + errorMessage);
+    });
     });
 </script>
 

@@ -77,7 +77,7 @@ $("#btn-signup").click(function() {
             }
         }).catch(function(error) {
             window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
-        });
+        })
 
     } else {
         window.alert("form is incomplete, please  fill in the empty fields.");
