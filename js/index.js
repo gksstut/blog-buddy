@@ -54,7 +54,7 @@ $("#btn-signup").click(function() {
 
     if (email != "" && password != "" && cPassword != "") {
         if (password == cPassword) {
-            firebase.auth().sendSignInLinkToEmail(email).then(function() {
+            /* firebase.auth().sendSignInLinkToEmail(email).then(function() {
                     window.localStorage.set('emailForSignIn', email);
                 }).catch(function(error) {
                     window.alert("Message : cant send verification code check your code again dweeb!!!!!" + errorMessage);
@@ -66,7 +66,7 @@ $("#btn-signup").click(function() {
                 }).catch(function(error) {
                     // An error happened.
                     window.alert("Message : cant send verification code check your code again 123!!!!!" + errorMessage);
-                })
+                })*/
             var result = firebase.auth().createUserWithEmailAndPassword(email, password);
 
             result.catch(function(error) {
