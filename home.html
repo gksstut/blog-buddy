@@ -215,9 +215,14 @@
                     blogsHTML += "</div> <br>";
                     blogsHTML+= "<div><h2> comments</h2></div>"
                     blogsHTML+= "<div class='form-wrapper'>"
-                    +"<input id='bio' type='text' placeholder='add comments' class='form-control'>"
+                    +"<input id='bio' type='text' placeholder='add comments' class='form-control' width='190' >"
                    + "<i class='zmdi  zmdi-tablet-mac'></i>"  
                 +"</div>";
+                blogsHTML+="<div class='form-group'>"
+							+"<div class='col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0'>"
+							+"<button id='btn-pro_Update' class='btn btn-primary' type='button'>Update profile</button>"
+							+"</div>"
+							+"</div>";
             blogsHTML += "</div>";
             });
             $("#blogs").html(blogsHTML);
