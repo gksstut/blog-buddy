@@ -209,17 +209,11 @@
                             +"</p> </div>"
                             ;
                     blogsHTML += "</div> <br>";
-                        ///comments sec
-                        blogsHTML += "<form id='comment'>"
-                                   += "<input type='text' id='message' placeholder='penny for your thoughts'>"
-                                    +"<input type='submit' value='Post Comment'>"
-                                +"</form>"
-                                +"<div class='comments'></div>";
-                         //commets end           
+                          blogsHTML+= "<div><h2> hhhhh</h2></div>"      
                     blogsHTML += "<div style = 'text-align: justify; color:black;'>";
                         blogsHTML += singleBlog.val().desc;
                     blogsHTML += "</div> <br>";
-                       
+            blogsHTML += "</div>";
             });
             $("#blogs").html(blogsHTML);
         }
