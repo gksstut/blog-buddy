@@ -209,10 +209,15 @@
                             +"</p> </div>"
                             ;
                     blogsHTML += "</div> <br>";
-                          blogsHTML+= "<div><h2> hhhhh</h2></div>"      
+                               
                     blogsHTML += "<div style = 'text-align: justify; color:black;'>";
                         blogsHTML += singleBlog.val().desc;
                     blogsHTML += "</div> <br>";
+                    blogsHTML+= "<div><h2> comments</h2></div>"
+                    blogsHTML+= "<div class='form-wrapper'>"
+                    +"<input id='bio' type='text' placeholder='add comments' class='form-control'>"
+                   + "<i class='zmdi  zmdi-tablet-mac'></i>"  
+                +"</div>";
             blogsHTML += "</div>";
             });
             $("#blogs").html(blogsHTML);
