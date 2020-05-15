@@ -214,7 +214,8 @@
                         blogsHTML += singleBlog.val().desc;
                     blogsHTML += "</div> <br>";
                     blogsHTML+= "<div><h2> comments</h2></div>"
-                    blogsHTML+= "<div class='form-wrapper'>"
+                    blogsHTML+="<form id = 'comment'>" 
+                    +"<div class='form-wrapper'>"
                     +"<input id='bio' type='text' placeholder='Type in your comment' class='form-control' width='190' >"
                    + "<i class='zmdi  zmdi-tablet-mac'></i>"  
                 +"</div>";
@@ -222,7 +223,8 @@
 							+"<div class='col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0'>"
 							+"<button id='addCom' class='btn btn-primary' type='button'> Add comment</button>"
 							+"</div>"
-							+"</div>";
+                            +"</div>";
+                            blogsHTML+="</form>";
             blogsHTML += "</div>";
             });
             $("#blogs").html(blogsHTML);
