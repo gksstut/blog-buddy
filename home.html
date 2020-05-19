@@ -186,10 +186,11 @@
     var todb = firebase.database();
     var comRef=  todb.ref("Blogs");
     comRef.on('value', gotData, errData);
+    var keys;
     function gotData(data){
         var Blogs = data.val();
         var keys = Object.keys(Blogs);
-        console.log(keys);
+        //console.log(keys);
     }
     function errData(err){
         console.log("error");
@@ -201,8 +202,15 @@
             var blogsHTML = "";
            
             blogs.forEach(function(singleBlog){
+                var i = counter;
                 counter = counter + 1;
+               
+                while( i <= keys.length){
+                    var blogiid = keys[i];
+                    console.log(blogiid);
+                   
 
+                }
                 console.log(blogId);
                 blogsHTML += "<div class = 'jumbotron bg-light text-dark border border-dark' >";
                     blogsHTML += "<div> <img width='100%' src = '";
