@@ -200,11 +200,11 @@
     dbBlogs.on("value",function(blogs){
         if(blogs.exists()){
             var blogsHTML = "";
-           
+            console.log(keys);
             blogs.forEach(function(singleBlog){
-                var i = counter;
+         
                 counter = counter + 1;
-               
+                var i = counter;
                
                     var blogiid = keys[i];
                     console.log(blogiid);
