@@ -183,6 +183,19 @@
 //**************************************Retrieve and display data from firebase**************************************
     var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
     var blogId =  firebase.database().ref().child("Blogs").uid;
+    var todb = firebase.database();
+    var comRef=  todb.ref("Blogs");
+    comRef.on('value', gotData, errData);
+    function gotData(data){
+        var Blogs = data.val();
+        var keys = Object.keys(Blogs);
+        Console.log(keys);
+    }
+    function errData(err){
+        console.log("error");
+        console.log(errr);
+    }
+
     dbBlogs.on("value",function(blogs){
         if(blogs.exists()){
             var blogsHTML = "";
