@@ -182,14 +182,14 @@
     }
 //**************************************Retrieve and display data from firebase**************************************
     var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
-
+    var blogId = 
     dbBlogs.on("value",function(blogs){
         if(blogs.exists()){
             var blogsHTML = "";
-            console.log(dbBlogs);
+           
             blogs.forEach(function(singleBlog){
                 counter = counter + 1;
-
+                console.log(counter);
                 blogsHTML += "<div class = 'jumbotron bg-light text-dark border border-dark' >";
                     blogsHTML += "<div> <img width='100%' src = '";
                         blogsHTML += singleBlog.val().image;
