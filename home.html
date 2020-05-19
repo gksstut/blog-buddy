@@ -207,7 +207,7 @@
                 var i = counter-1;
                
                     var blogiid = keys[i];
-                    var prin = blogiid.val();
+                    var prin = blogiid;
                     console.log(prin);
                    
 
@@ -236,7 +236,7 @@
                     blogsHTML += "<div style = 'text-align: justify; color:black;'>";
                         blogsHTML += singleBlog.val().desc;
                     blogsHTML += "</div> <br>";
-                    blogsHTML+= "<div><h2> comments</h2></div>"
+                    blogsHTML+= "<div><h2><p id='coms'> comments</p></h2></div>"
                     blogsHTML+="<form id = 'comment'>" 
                     +"<div class='form-wrapper'>"
                     +"<input id='bio' type='text' placeholder='Type in your comment' class='form-control' width='190' >"
@@ -249,6 +249,7 @@
                             +"</div>";
                             blogsHTML+="</form>";
             blogsHTML += "</div>";
+            document.getElementById("coms").innerHTML = prin;
             });
             $("#blogs").html(blogsHTML);
         }
