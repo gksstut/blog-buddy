@@ -304,6 +304,7 @@ function updatefirebase(){
    //Listen for click on Submit Comment button, and post comment.
 
 $("#addCom").click(function(){
+  console.log('button pressed')
  //Replace line breaks in comment with br tags.
  var newcomment = document.getElementById('txComment').value.replace(/\n/g, "<br>");
  //Define a new, keyed post.
@@ -319,6 +320,7 @@ $("#addCom").click(function(){
 });
 
 function showpastcomments() {
+  console.log('button NOT pressed yet')
   var showat = document.getElementById('pastcomments');
   //Get comments whose from page equals this page's pathname.
   var commentsRef = firebase.database().ref('comments/').orderByChild('frompage').equalTo(location.pathname);
