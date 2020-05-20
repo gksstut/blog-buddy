@@ -1,14 +1,4 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyAsG6B509P2CuHNPscEUbj37U2oaaWq4OQ",
-    authDomain: "buddyblogdb.firebaseapp.com",
-    databaseURL: "https://buddyblogdb.firebaseio.com",
-    projectId: "buddyblogdb",
-    storageBucket: "buddyblogdb.appspot.com",
-    messagingSenderId: "222785122276",
-    appId: "1:222785122276:web:5105ed633c76b45e9321f1",
-    measurementId: "G-R4K9HWH7PW"
-  };
-  firebase.initializeApp(firebaseConfig);
+
 //Rootref is the whole database.
 const rootRef = firebase.database().ref();
 //commentsRef is just the pageCountsNode
