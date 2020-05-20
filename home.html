@@ -182,41 +182,14 @@
     }
 //**************************************Retrieve and display data from firebase**************************************
     var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
-    var blogId =  firebase.database().ref().child("Blogs").uid;
-    var todb = firebase.database();
-    var comRef=  todb.ref("Blogs");
-    comRef.on('value', gotData, errData);
-    var keys;
-    function gotData(data){
-        var Blogs = data.val();
-         keys = Object.keys(Blogs);
-        //console.log(keys);
-    }
-    function errData(err){
-        console.log("error");
-        console.log(errr);
-    }
 
     dbBlogs.on("value",function(blogs){
         if(blogs.exists()){
             var blogsHTML = "";
-            console.log(keys);
-            blogs.forEach(function(singleBlog){
-         
-                counter = counter + 1;
-                var i = counter-1;
-               
-                    var blogiid = keys[i];
-                    if(blogiid!= "undefined"){
-                    var prin = blogiid;
-                    console.log(prin);
-                    console.log("yerr");
-                }
-                    
-                   
 
-                
-                console.log(blogId);
+            blogs.forEach(function(singleBlog){
+                counter = counter + 1;
+
                 blogsHTML += "<div class = 'jumbotron bg-light text-dark border border-dark' >";
                     blogsHTML += "<div> <img width='100%' src = '";
                         blogsHTML += singleBlog.val().image;
@@ -240,24 +213,19 @@
                     blogsHTML += "<div style = 'text-align: justify; color:black;'>";
                         blogsHTML += singleBlog.val().desc;
                     blogsHTML += "</div> <br>";
-                    blogsHTML+= "<div id='allcomments'>"
-        +"<h3>Comments</h3>"
-        +"<!-- We will show past comments in the list below-->"
-        +"<ul id='pastcomments'></ul>"
-        +"<form id='newcomment'>"
-            +"<label for='tbName'>First Name or Initials</label>"
-            +"<br>"
-            +"<input id='tbName' type='text' maxlength='20' required>"
-            +"<br>"
-            +"<label for='txComment'>Your Comment / Question</label>"
-            +"<br>"
-            +"<textarea id='txComment' maxlength='4096' required style='width:96%'></textarea>"
-            +"<br>"
-            +"<button id= 'addCom' class='btn btn-primary' type='button'>add com</button>"
-        +"</form>"
-    +"</div>";
+                    blogsHTML+= "<div><h2> comments</h2></div>"
+                    blogsHTML+="<form id = 'comment'>" 
+                    +"<div class='form-wrapper'>"
+                    +"<input id='bio' type='text' placeholder='Type in your comment' class='form-control' width='190' >"
+                   + "<i class='zmdi  zmdi-tablet-mac'></i>"  
+                +"</div>";
+                blogsHTML+="<div class='form-group'>"
+							+"<div class='col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0'>"
+							+"<button id='addCom' class='btn btn-primary' type='button'> Add comment</button>"
+							+"</div>"
+                            +"</div>";
+                            blogsHTML+="</form>";
             blogsHTML += "</div>";
-            //document.getElementById("coms").innerHTML = keys[0];
             });
             $("#blogs").html(blogsHTML);
         }
