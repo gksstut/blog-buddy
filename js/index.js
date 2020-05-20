@@ -303,8 +303,9 @@ function updatefirebase(){
    const commentsRef = rootRef.child('comments');
    //Listen for click on Submit Comment button, and post comment.
 
-$("#addCom").click(function(){
-  console.log('button pressed')
+$("#addCom").click(function()
+{
+  console.log('button pressssssssed')
  //Replace line breaks in comment with br tags.
  var newcomment = document.getElementById('txComment').value.replace(/\n/g, "<br>");
  //Define a new, keyed post.
