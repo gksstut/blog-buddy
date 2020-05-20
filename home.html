@@ -240,18 +240,22 @@
                     blogsHTML += "<div style = 'text-align: justify; color:black;'>";
                         blogsHTML += singleBlog.val().desc;
                     blogsHTML += "</div> <br>";
-                    blogsHTML+= "<div><h2><p id='coms'> comments</p></h2></div>"
-                    blogsHTML+="<form id = 'comment'>" 
-                    +"<div class='form-wrapper'>"
-                    +"<input id='bio' type='text' placeholder='Type in your comment' class='form-control' width='190' >"
-                   + "<i class='zmdi  zmdi-tablet-mac'></i>"  
-                +"</div>";
-                blogsHTML+="<div class='form-group'>"
-							+"<div class='col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0'>"
-							+"<button id='addCom' class='btn btn-primary' type='button'> Add comment</button>"
-							+"</div>"
-                            +"</div>";
-                            blogsHTML+="</form>";
+                    blogsHTML+= "<div id='allcomments'>"
+        +"<h3>Comments</h3>"
+        +"<!-- We will show past comments in the list below-->"
+        +"<ul id='pastcomments'></ul>"
+        +"<form id='newcomment'>"
+            +"<label for='tbName'>First Name or Initials</label>"
+            +"<br>"
+            +"<input id='tbName' type='text' maxlength='20' required>"
+            +"<br>"
+            +"<label for='txComment'>Your Comment / Question</label>"
+            +"<br>"
+            +"<textarea id='txComment' maxlength='4096' required style='width:96%'></textarea>"
+            +"<br>"
+            +"<input type='submit' id='btnSubmitComment' value='Submit Comment'>"
+        +"</form>"
+    +"</div>";
             blogsHTML += "</div>";
             //document.getElementById("coms").innerHTML = keys[0];
             });
