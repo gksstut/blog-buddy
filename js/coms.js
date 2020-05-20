@@ -8,7 +8,7 @@ var firebaseConfig = {
     appId: "1:222785122276:web:5105ed633c76b45e9321f1",
     measurementId: "G-R4K9HWH7PW"
   };
-firebase.initializeApp(config);
+  firebase.initializeApp(firebaseConfig);
 //Rootref is the whole database.
 const rootRef = firebase.database().ref();
 //commentsRef is just the pageCountsNode
