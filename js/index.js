@@ -131,6 +131,9 @@ $("#btn-update").click(function()
   var firstName = $("#firstName").val();
   var lastName = $("#lastName").val();
   var gender= $("#Gender").val();
+  var email = $("#email").val();
+  var degree = $("#degree").val();
+  var course = $("#course").val();
   
   var rootRef = firebase.database().ref().child("Users");
   var userID = firebase.auth().currentUser.uid;
@@ -147,6 +150,9 @@ if (phoneNum!="" && studentNum !="" && university!="" && firstName!="" && lastNa
     "university":university,
     "lastName": lastName,
     "Gender": gender,
+    "degree": degree,
+    "email":  email,
+    "course": course,
   };
 
 usersRef.set(userData, function(error)

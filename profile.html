@@ -226,8 +226,12 @@
                 var lName = (snapshot.val() && snapshot.val().lastName);
                 var userBio = (snapshot.val() && snapshot.val().bio);
                 var userPhone = (snapshot.val() && snapshot.val().phone);
-                var  userCourse = (snapshot.val() && snapshot.val().university);
-
+                var  userVarsity = (snapshot.val() && snapshot.val().university);
+                var userCourse = (snapshot.val() && snapshot.val().course);
+                var userGender = (snapshot.val() && snapshot.val().Gender);
+                var useremail = (snapshot.val() && snapshot.val().email);
+                var userdegree =  (snapshot.val() && snapshot.val().degree);
+                
                 userName = fName + " " + lName;
 
                 document.getElementById("p1").innerHTML = userName;
@@ -238,7 +242,8 @@
                 document.getElementById("Scourse").innerHTML = userCourse;
                 document.getElementById("Suniversity").innerHTML = userVarsity;
                 document.getElementById("Sdegree").innerHTML = userdegree;
-
+                document.getElementById("Sgender").innerHTML = userGender;
+                document.getElementById("Semail").innerHTML = useremail;
                 
                 console.log(userName);
                
