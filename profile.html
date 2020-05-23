@@ -106,18 +106,17 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1 May 1995</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Name:</strong><output id="Sname"> 1 May 1995</output></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Gender:</strong><output id="Sgender"> www.example.com</output></li>
                   <li  ><i class="icofont-rounded-right"></i> <strong>Phone:</strong><output id="SphoneNum"> +123 456 7890</output></li>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : New York, USA</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>University:</strong><output id="Suniversity"> City : New York, USA</output></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 30</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong> email@example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong><output id="Sdegree"> Master</output></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>course:</strong><output id="Scourse"> Available</output></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>email:</strong><output id="Semail"> email@example.com</output></li>
                 </ul>
               </div>
             </div>
@@ -227,6 +226,7 @@
                 var lName = (snapshot.val() && snapshot.val().lastName);
                 var userBio = (snapshot.val() && snapshot.val().bio);
                 var userPhone = (snapshot.val() && snapshot.val().phone);
+                var  userCourse = (snapshot.val() && snapshot.val().university);
 
                 userName = fName + " " + lName;
 
@@ -234,6 +234,10 @@
                 document.getElementById("p2").innerHTML = userName;
                 document.getElementById("userB").innerHTML = userBio;
                 document.getElementById("SphoneNum").innerHTML = userPhone;
+                document.getElementById("Sname").innerHTML = userName;
+                document.getElementById("Scourse").innerHTML = userCourse;
+                document.getElementById("Suniversity").innerHTML = userVarsity;
+                document.getElementById("Sdegree").innerHTML = userdegree;
 
                 
                 console.log(userName);
